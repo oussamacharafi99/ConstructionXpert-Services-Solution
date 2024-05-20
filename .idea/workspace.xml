@@ -10,18 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/DataBaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ResourceDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ResourceDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project_Resource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/DataBaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ResourceDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ResourceDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +38,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="MavenRunConfiguration" name="Construction [install]" />
-    </enabled-run-configurations>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -97,8 +91,8 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0a0312fd-99b9-4f41-8871-a42bb813c5bb" />
-        <option name="HTTP_PORT" value="8082" />
+        <option name="BASE_DIRECTORY_NAME" value="6cee4fee-f31f-438b-9746-bf158d4f03af" />
+        <option name="HTTP_PORT" value="8088" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -106,7 +100,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51676" />
+        <option name="DEBUG_PORT" value="50408" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -185,7 +179,8 @@
       <option name="presentableId" value="Default" />
       <updated>1716066930177</updated>
       <workItem from="1716066931285" duration="2593000" />
-      <workItem from="1716086089948" duration="2452000" />
+      <workItem from="1716086089948" duration="5337000" />
+      <workItem from="1716215555310" duration="4215000" />
     </task>
     <servers />
   </component>

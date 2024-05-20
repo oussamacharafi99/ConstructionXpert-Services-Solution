@@ -7,7 +7,7 @@ import java.util.List;
 public class ResourceDaoImp implements ResourceDao{
     @Override
     public void addResource() {
-        
+
     }
 
     @Override

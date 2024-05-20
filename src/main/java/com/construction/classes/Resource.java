@@ -1,6 +1,7 @@
 package com.construction.classes;
 
 public class Resource {
+
     public Resource() {
     }
 
