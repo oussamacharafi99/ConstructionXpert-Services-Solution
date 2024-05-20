@@ -11,4 +11,13 @@
         <servlet-name>Home</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewProject</servlet-name>
+        <servlet-class>com.construction.servlets.ViewProject</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewProject</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
 </web-app>
