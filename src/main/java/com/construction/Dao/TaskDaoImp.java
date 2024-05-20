@@ -51,7 +51,10 @@ public class TaskDaoImp implements TaskDoa{
     }
 
     @Override
-    public void removeTask(Integer id) {
-
+    public void removeTask(Integer id) throws SQLException {
+        Connection connection = com.DAO.DataBaseManager.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM tasks WHERE id = ?");
+        preparedStatement.setInt(1, id);
+        preparedStatement.executeUpdate();
     }
 }

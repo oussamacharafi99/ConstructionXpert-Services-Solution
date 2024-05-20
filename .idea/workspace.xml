@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" afterDir="false" />
@@ -26,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Servlet" />
         <option value="Jsp File" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -175,7 +176,7 @@
       <updated>1716066930177</updated>
       <workItem from="1716066931285" duration="2593000" />
       <workItem from="1716086089948" duration="5337000" />
-      <workItem from="1716215555310" duration="8479000" />
+      <workItem from="1716215555310" duration="11259000" />
     </task>
     <servers />
   </component>

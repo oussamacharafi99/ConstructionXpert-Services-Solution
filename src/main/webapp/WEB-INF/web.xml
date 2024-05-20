@@ -13,11 +13,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ViewProject</servlet-name>
-        <servlet-class>com.construction.servlets.ViewProject</servlet-class>
+        <servlet-name>ViewTasks</servlet-name>
+        <servlet-class>com.construction.servlets.ViewTasks</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ViewProject</servlet-name>
+        <servlet-name>ViewTasks</servlet-name>
         <url-pattern>/view</url-pattern>
     </servlet-mapping>
 </web-app>
