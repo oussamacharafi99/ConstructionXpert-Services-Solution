@@ -10,17 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project_Resource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Filter/AuthentificationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/AddProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/DataBaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ResourceDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ResourceDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
-        <option value="Servlet" />
         <option value="Class" />
+        <option value="Servlet" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -180,7 +177,7 @@
       <updated>1716066930177</updated>
       <workItem from="1716066931285" duration="2593000" />
       <workItem from="1716086089948" duration="5337000" />
-      <workItem from="1716215555310" duration="4215000" />
+      <workItem from="1716215555310" duration="7640000" />
     </task>
     <servers />
   </component>
