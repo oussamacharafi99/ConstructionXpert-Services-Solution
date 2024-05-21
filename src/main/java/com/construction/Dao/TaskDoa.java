@@ -8,6 +8,6 @@ import java.util.List;
 public interface TaskDoa {
     public void addTask(Task task) throws SQLException;
     public List<Task> viewTask(int projectId) throws SQLException;
-    public void updateTask(Integer id);
+    public void updateTask(Integer id, Task task) throws SQLException;
     public void removeTask(Integer id) throws SQLException;
 }

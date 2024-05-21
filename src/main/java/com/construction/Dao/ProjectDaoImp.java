@@ -40,10 +40,20 @@ public class ProjectDaoImp implements ProjectDao{
         return allProjects;
     };
 
+
     @Override
-    public void updateProject(Integer id) {
-
-
+    public void updateProject(Integer id, Project project) throws SQLException {
+        String sql = "UPDATE projects SET name = ?, description = ?, startDate = ?, endDate = ?, budget = ? WHERE id = ?";
+        try (Connection connection = com.DAO.DataBaseManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, project.getName());
+            preparedStatement.setString(2, project.getDescription());
+            preparedStatement.setString(3, project.getStartDate());
+            preparedStatement.setString(4, project.getEndDate());
+            preparedStatement.setDouble(5, project.getBudget());
+            preparedStatement.setInt(6, id);
+            preparedStatement.executeUpdate();
+        }
     }
 
     @Override

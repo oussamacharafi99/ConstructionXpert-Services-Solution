@@ -46,8 +46,18 @@ public class TaskDaoImp implements TaskDoa{
     }
 
     @Override
-    public void updateTask(Integer id) {
-
+    public void updateTask(Integer id, Task task) throws SQLException {
+        String sql = "UPDATE tasks SET projectId = ?, description = ?, startDate = ?, endDate = ?, status = ? WHERE id = ?";
+        try (Connection connection = com.DAO.DataBaseManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, task.getProjectId());
+            preparedStatement.setString(2, task.getDescription());
+            preparedStatement.setString(3, task.getStartDate());
+            preparedStatement.setString(4, task.getEndDate());
+            preparedStatement.setString(5, task.getStatus());
+            preparedStatement.setInt(6, id);
+            preparedStatement.executeUpdate();
+        }
     }
 
     @Override
