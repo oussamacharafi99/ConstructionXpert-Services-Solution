@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +176,7 @@
       <workItem from="1716086089948" duration="5337000" />
       <workItem from="1716215555310" duration="11259000" />
       <workItem from="1716279041434" duration="4094000" />
-      <workItem from="1716365985428" duration="1544000" />
+      <workItem from="1716365985428" duration="4031000" />
     </task>
     <servers />
   </component>

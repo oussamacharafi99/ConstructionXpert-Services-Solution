@@ -79,7 +79,45 @@
 </section>
 <section class="Service">
     <h1><em>Services</em></h1>
+
+    <div class="service-wrapper">
+        <div class="card" id="card">
+            <div class="img"><img src="https://i.ibb.co/Z6J5Xnx/pic1.jpg" width="100%" class="imm"></div>
+            <div class="content">
+                <h1>Construction <span><br> Engineering your dreams with us.</span></h1>
+                <h2><i class="fa-solid fa-plus"></i></h2>
+            </div>
+        </div>
+        <div class="card" id="card">
+            <div class="img"><img src="https://i.ibb.co/3d40Tm1/pic2.jpg" width="100%" class="imm"></div>
+            <div class="content">
+                <h1>Construction <span><br> Engineering your dreams with us.</span></h1>
+                <h2><i class="fa-solid fa-plus"></i></h2>
+            </div>
+        </div>
+        <div class="card" id="card">
+            <div class="img"><img src="https://i.ibb.co/nQg26WG/pic3.jpg" width="100%" class="imm"></div>
+            <div class="content">
+                <h1>Construction <span><br> Engineering your dreams with us.</span></h1>
+                <h2><i class="fa-solid fa-plus"></i></h2>
+            </div>
+        </div>
+        <div class="card1" id="card">
+            <div class="mini-card">
+                <p>Building</p>
+                <h1>It better in concrete.</h1>
+                <h2>When it comes to your house, don’t mess with the rest, trust the best. Making your vision come true, that is what we do.</h2>
+                <div class="buttons">
+                    <a href="#" id="a1" class="a1"></a>
+                    <a href="#" id="a2" class="a2"></a>
+                    <a href="#" id="a3" class="a3">VIEW ALL</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<br>
+<br>
 <section class="About">
     <h1><em>About</em></h1>
 </section>
@@ -87,6 +125,73 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<script src="script.js"></script>
+<script>
+    document.querySelectorAll(".card").forEach((card) => {
+        const imm = card.querySelector(".imm");
+        const content = card.querySelector(".content");
+
+        let check = true;
+
+        card.addEventListener("mouseenter", () => {
+            if (check) {
+                imm.style.transition = "0.6s";
+                imm.style.height = "300px";
+                content.style.transition = "0.6s";
+                content.style.height = "50px";
+                check = false;
+            }
+        });
+
+        card.addEventListener("mouseleave", () => {
+            if (!check) {
+                imm.style.transition = "0.6s";
+                imm.style.height = "350px";
+                content.style.transition = "0.6s";
+                content.style.height = "0";
+                check = true;
+            }
+        });
+    });
+    document.querySelectorAll(".buttons").forEach((btn) => {
+        const a1 = btn.querySelector(".a1");
+        const a2 = btn.querySelector(".a2");
+        const a3 = btn.querySelector(".a3");
+        let check = true;
+
+        btn.addEventListener("mouseenter", () => {
+            if (check) {
+                a1.style.transition = ".6s"
+                a1.style.width = "124px";
+                a1.style.height = "44px";
+                a2.style.transition = ".6s"
+                a2.style.width = "124px";
+                a2.style.height = "44px";
+                a1.style.borderColor = "#ffe100"
+                a2.style.borderColor = "#ffe100"
+                a3.style.transition = ".6s";
+                a3.style.background = "#ffe100";
+                a3.style.color = "black"
+                check = false;
+            }
+        });
+
+        btn.addEventListener("mouseleave", () => {
+            if (!check) {
+                a1.style.transition = ".6s"
+                a1.style.width = "44px";
+                a1.style.height = "24px";
+                a1.style.transition = ".6s"
+                a1.style.borderColor = "black"
+                a2.style.borderColor = "black"
+                a2.style.width = "44px";
+                a2.style.height = "24px";
+                a3.style.background = "black";
+                a3.style.color = "white"
+                check = true;
+            }
+        });
+    });
+
+</script>
 </body>
 </html>
