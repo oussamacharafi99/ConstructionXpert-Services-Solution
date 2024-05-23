@@ -38,7 +38,28 @@ public class ProjectDaoImp implements ProjectDao{
             allProjects.add(new Project(project_id, project_name, project_description, startDate , endDate, budjet));
         }
         return allProjects;
+    }
+
+    @Override
+    public Project ViewProjectById( Integer id) throws SQLException {
+        Project project = null;
+        Connection connection = com.DAO.DataBaseManager.getConnection();
+        String sql = "SELECT * FROM projects WHERE id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            Integer projectId = resultSet.getInt("id");
+            String projectName = resultSet.getString("name");
+            String projectDescription = resultSet.getString("description");
+            String startDate = resultSet.getString("startDate");
+            String endDate = resultSet.getString("endDate");
+            Double budget = resultSet.getDouble("budget");
+            project = new Project(projectId, projectName, projectDescription, startDate, endDate, budget);
+        }
+        return project;
     };
+
 
 
     @Override

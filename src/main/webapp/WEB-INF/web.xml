@@ -18,6 +18,15 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ViewTasks</servlet-name>
+        <url-pattern>/viewTask</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewAll</servlet-name>
+        <servlet-class>com.construction.servlets.ViewAll</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewAll</servlet-name>
         <url-pattern>/view</url-pattern>
     </servlet-mapping>
 </web-app>

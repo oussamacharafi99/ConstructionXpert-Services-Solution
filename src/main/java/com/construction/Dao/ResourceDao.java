@@ -11,4 +11,5 @@ public interface ResourceDao {
     public List<Resource> viewResources() throws SQLException;
     public void updateResource(Integer id, Resource resource) throws SQLException ;
     public void removeResource(Integer id) throws SQLException;
+    public List<Resource> getResourceIdTask(Integer id_task) throws SQLException;
 }

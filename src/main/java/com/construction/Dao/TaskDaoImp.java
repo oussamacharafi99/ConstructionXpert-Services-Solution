@@ -31,7 +31,6 @@ public class TaskDaoImp implements TaskDoa{
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, projectId);
             ResultSet resultSet = preparedStatement.executeQuery();
-
             while (resultSet.next()) {
                 Task task = new Task();
                 task.setId(resultSet.getInt("id"));

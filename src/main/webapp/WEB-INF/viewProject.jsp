@@ -1,103 +1,53 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .task {
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            cursor: grab;
-        }
-
-        .delete-marker {
-            width: 100px;
-            padding: 10px;
-            background-color: red;
-            color: white;
-            text-align: center;
-            position: fixed;
-            left: 10px;
-            bottom: 50px;
-            transition: bottom 0.3s ease;
-        }
-
-        .delete-button {
-            cursor: pointer;
-            color: white;
-            float: left;
-        }
+        <%@include file="/CSS/dashboard.css"%>
     </style>
+    <title>Document</title>
 </head>
 <body>
-<h1>Projects</h1>
-<c:forEach var="task" items="${TaskP}">
-    <div class="task" data-task-id="${task.id}" draggable="true">
-        <h2>Task ID: ${task.id}</h2>
-        <p>Project ID: ${task.projectId}</p>
-        <p>Description: ${task.description}</p>
-        <p>Start Date: ${task.startDate}</p>
-        <p>End Date: ${task.endDate}</p>
-        <p>Status: ${task.status}</p>
+<header>
+    <div class="contact">
+        <div class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <p>ou.charafi@gmail.com</p>
+        </div>
+        <div class="phone">
+            <i class="fa-solid fa-phone"></i>
+            <p>(+212) 628532671</p>
+        </div>
+        <div class="workTime">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>Sun-Sat 9:45 am</p>
+        </div>
     </div>
-</c:forEach>
+    <div class="login">
+        <button><i class="fa-solid fa-right-to-bracket"></i></button>
+    </div>
+</header>
+<section class="main">
+    <div class="menu">
+        <div class="logo">
+            <img src="https://i.ibb.co/HzkVrgC/4.png" width="100%">
+        </div>
+        <form id="option">
+            <select id="mySelect" onchange="location = this.value;">
+                <c:forEach items="${P1}" var="P">
+                    <option value="ViewProject?id=${P.id}">${P.name}</option>
+                </c:forEach>
+            </select>
+        </form>
 
-<div class="delete-marker" id="deleteMarker">
-    <span class="delete-button">Delete</span>
-</div>
+        <div class="profile">
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
 
-<form id="deleteForm" action="ViewTasks" method="post">
-    <input type="hidden" id="taskId" name="taskId">
-</form>
-
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const tasks = document.querySelectorAll('.task');
-        const deleteMarker = document.getElementById('deleteMarker');
-        const deleteButton = deleteMarker.querySelector('.delete-button');
-
-        tasks.forEach(task => {
-            task.addEventListener('dragstart', (e) => {
-                deleteMarker.style.bottom = '0';
-                e.dataTransfer.setData('text/plain', e.target.dataset.taskId);
-                
-                e.target.classList.add('dragging');
-            });
-
-            task.addEventListener('dragend', (e) => {
-                deleteMarker.style.bottom = '50px';
-
-                e.target.classList.remove('dragging');
-            });
-        });
-
-        deleteMarker.addEventListener('dragover', (e) => {
-            e.preventDefault();
-        });
-
-        deleteMarker.addEventListener('drop', (e) => {
-            e.preventDefault();
-            const taskId = e.dataTransfer.getData('text/plain');
-            const taskElement = document.querySelector(`.task[data-task-id="${taskId}"]`);
-            taskElement.parentNode.removeChild(taskElement);
-            deleteMarker.style.bottom = '50px';
-        });
-
-        deleteButton.addEventListener('click', (e) => {
-            const taskId = document.querySelector('.task.dragging').dataset.taskId;
-            document.getElementById('taskId').value = taskId;
-            document.getElementById('deleteForm').submit();
-        });
-
-        document.addEventListener('dragenter', (e) => {
-            if (!deleteMarker.contains(e.target)) {
-                deleteMarker.style.bottom = '50px';
-            }
-        });
-    });
-
-</script>
+</section>
 </body>
 </html>

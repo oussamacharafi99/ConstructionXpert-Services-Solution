@@ -5,16 +5,16 @@ public class Resource {
     public Resource() {
     }
 
-    public Resource(int resource_id, String name, String type, int quantity, String supplier) {
-        this.resource_id = resource_id;
+    public Resource(int task_id, String name, String type, int quantity, String supplier) {
+        this.task_id = task_id;
         this.name = name;
         this.type = type;
         this.quantity = quantity;
         this.supplier = supplier;
     }
-    public Resource(int id , int resource_id, String name, String type, int quantity, String supplier) {
+    public Resource(int id , int task_id, String name, String type, int quantity, String supplier) {
         this.id = id;
-        this.resource_id = resource_id;
+        this.task_id = task_id;
         this.name = name;
         this.type = type;
         this.quantity = quantity;
@@ -22,11 +22,9 @@ public class Resource {
     }
 
     private int id;
-    private int resource_id;
+    private int task_id;
     private String name;
     private String type;
-    private int quantity;
-    private String supplier;
 
     public int getId() {
         return id;
@@ -34,6 +32,14 @@ public class Resource {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTask_id() {
+        return task_id;
+    }
+
+    public void setTask_id(int task_id) {
+        this.task_id = task_id;
     }
 
     public String getName() {
@@ -68,11 +74,8 @@ public class Resource {
         this.supplier = supplier;
     }
 
-    public int getResource_id() {
-        return resource_id;
-    }
+    private int quantity;
+    private String supplier;
 
-    public void setResource_id(int resource_id) {
-        this.resource_id = resource_id;
-    }
+
 }

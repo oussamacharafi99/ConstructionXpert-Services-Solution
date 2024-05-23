@@ -16,12 +16,6 @@ import java.sql.SQLException;
 public class Home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProjectDaoImp PR = new ProjectDaoImp();
-        try {
-            PR.addProject(new Project("BuildEnaa" , "this project for build enaa School" , "2000-01-09" , "2022-02-23",100203));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request , response);
     }
 

@@ -22,6 +22,7 @@ header{
     align-items: center;
     color: var(--color-primary);
     padding: 0 50px;
+    position: fixed;
 }
 .contact{
     width: 45%;
@@ -346,5 +347,50 @@ em{
 em{
     color: var(--color-primary);
     background: black;
+}
+
+/* About */
+.About{
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    background: black;
+}
+.About > h1 {
+    font-size: 40px;
+    font-weight: 300;
+    text-shadow: 8px 12px 20px rgb(33, 33, 33);
+    color: var(--color-primary);
+}
+.About > h1 > em{
+    color: black;
+    background: var(--color-primary);
+    font-weight: 900;
+}
+.about-wrapper{
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    padding: 10px 40px ;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+}
+.SP{
+    width: 700px;
+    height: 400px;
+    border-radius: 3px;
+    position: absolute;
+    left: 150px;
+}
+.content2{
+    width: 300px;
+    height: 400px;
+    background: white;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    border-radius: 3px;
 }
 

@@ -1,5 +1,7 @@
 package com.construction.servlets;
+import com.construction.Dao.ResourceDaoImp;
 import com.construction.Dao.TaskDaoImp;
+import com.construction.classes.Resource;
 import com.construction.classes.Task;
 
 import javax.servlet.*;
@@ -14,21 +16,23 @@ public class ViewTasks extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer id = 1; // Assuming you want to view tasks for a specific project ID
-        TaskDaoImp task = new TaskDaoImp();
-        try {
-            List<Task> tasks = task.viewTask(id);
-            request.setAttribute("TaskP", tasks);
-        } catch (SQLException e) {
-            throw new ServletException(e);
-        }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/viewProject.jsp");
-        dispatcher.forward(request, response);
+//        Integer id = 1; // Assuming you want to view tasks for a specific project ID
+//        TaskDaoImp task = new TaskDaoImp();
+//        ResourceDaoImp R = new ResourceDaoImp();
+//        try {
+//            R.updateResource(3 , new Resource(1 , "oussama" , "salma" , 24 , "enaa"));
+////            List<Task> tasks = task.viewTask(id);
+//            request.setAttribute("TaskP", R.getResourceIdTask(1));
+//        } catch (SQLException e) {
+//            throw new ServletException(e);
+//        }
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/viewProject.jsp");
+//        dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Handle POST requests if needed
+
     }
 
     @Override

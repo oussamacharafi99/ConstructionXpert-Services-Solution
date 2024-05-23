@@ -119,7 +119,40 @@
 <br>
 <br>
 <section class="About">
-    <h1><em>About</em></h1>
+    <h1>ABOUT <em> COMPANY</em></h1>
+    <div class="about-wrapper">
+        <div class="SP">
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+                              centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+                <swiper-slide><img src="https://i.ibb.co/G0FSmJz/Adobe-Stock-268225711-Preview.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="https://i.ibb.co/0YnZMqb/Adobe-Stock-420698353-Preview.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="https://i.ibb.co/4SmDcn6/Adobe-Stock-179280204-Preview.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="https://i.ibb.co/pKXzsS6/Adobe-Stock-209466807-Preview.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="https://i.ibb.co/ZVVN2Z7/Adobe-Stock-268247743-Preview.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="https://i.ibb.co/Rgtj8Bh/Adobe-Stock-571655697-Preview.jpg" alt=""></swiper-slide>
+                <div class="autoplay-progress" slot="container-end">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
+                </div>
+            </swiper-container>
+
+        </div>
+        <div class="content2">
+            <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 4</swiper-slide>
+                <swiper-slide>Slide 5</swiper-slide>
+                <swiper-slide>Slide 6</swiper-slide>
+                <swiper-slide>Slide 7</swiper-slide>
+                <swiper-slide>Slide 8</swiper-slide>
+                <swiper-slide>Slide 9</swiper-slide>
+            </swiper-container>
+        </div>
+    </div>
 </section>
 
 
