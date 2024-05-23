@@ -35,6 +35,16 @@
         <div class="logo">
             <img src="https://i.ibb.co/BctDWFW/Gold-Black-Modern-Real-Estate-Logo.png" width="100%">
         </div>
+        <div class="containers">
+            <div class="icons">
+                <i class="fa-solid fa-diagram-project"></i>
+                <a href="#">All Projects</a>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-diagram-project"></i>
+                <a href="#">Finished projects</a>
+            </div>
+        </div>
         <form id="option">
             <select id="mySelect" onchange="location = this.value;">
                 <c:forEach items="${P1}" var="P">
@@ -50,7 +60,7 @@
     <section class="hero">
         <div class="menu_project">
             <div class="mini-menu">
-                <h1>
+                <h1 id="p">
                     <i class="fa-solid fa-diagram-project"></i>
                     <a href="#">Project</a>
                 </h1>
