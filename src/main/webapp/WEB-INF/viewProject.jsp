@@ -33,7 +33,7 @@
 <section class="main">
     <div class="menu">
         <div class="logo">
-            <img src="https://i.ibb.co/HzkVrgC/4.png" width="100%">
+            <img src="https://i.ibb.co/BctDWFW/Gold-Black-Modern-Real-Estate-Logo.png" width="100%">
         </div>
         <form id="option">
             <select id="mySelect" onchange="location = this.value;">
@@ -44,10 +44,36 @@
         </form>
 
         <div class="profile">
-            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="#"><i class="fa-regular fa-id-card"></i></a>
         </div>
     </div>
+    <section class="hero">
+        <div class="menu_project">
+            <div class="mini-menu">
+                <h1>
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <a href="#">Project</a>
+                </h1>
+                <h1>
+                    <i class="fa-solid fa-list-check"></i>
 
+                    <a href="#">Tasks</a>
+                </h1>
+                <h1>
+                    <i class="fa-brands fa-osi"></i>
+                    <a href="#">Resources</a>
+                </h1>
+                <h1>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <a href="#">statistics</a>
+                </h1>
+            </div>
+        </div>
+        <div class="projectView">
+
+        </div>
+    </section>
 </section>
+
 </body>
 </html>

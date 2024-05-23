@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/jjj</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -27,6 +27,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ViewAll</servlet-name>
-        <url-pattern>/view</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>

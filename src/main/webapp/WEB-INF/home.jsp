@@ -140,7 +140,7 @@
 
         </div>
         <div class="content2">
-            <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+            <swiper-container class="mySwiper" effect="cards" grab-cursor="true" autoPlay="true">
                 <swiper-slide>Slide 1</swiper-slide>
                 <swiper-slide>Slide 2</swiper-slide>
                 <swiper-slide>Slide 3</swiper-slide>
