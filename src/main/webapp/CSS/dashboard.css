@@ -126,8 +126,8 @@ header{
 }
 .profile > a {
     color: var(--color-primary);
-    font-size: 20px;
+    font-size: 14px;
     border: 1px solid var(--color-primary);
-    padding: 5px 10px;
+    padding: 3.5px 7px;
     border-radius: 7px;
 }
