@@ -43,6 +43,56 @@ public class TaskDaoImp implements TaskDoa{
             }
         return allTask;
     }
+    public List<Task> viewTaskEnCours(int projectId) throws SQLException {
+        List<Task> allTask = new ArrayList<>();
+        String sql = "SELECT * FROM tasks WHERE projectId = ?";
+        Connection connection = com.DAO.DataBaseManager.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, projectId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Task task = new Task();
+            task.setId(resultSet.getInt("id"));
+            task.setProjectId(resultSet.getInt("projectId"));
+            task.setDescription(resultSet.getString("description"));
+            task.setStartDate(resultSet.getString("startDate"));
+            task.setEndDate(resultSet.getString("endDate"));
+            task.setStatus(resultSet.getString("status"));
+            allTask.add(task);
+        }
+        List<Task> taskEnCours = new ArrayList<>();
+        for(Task t : allTask){
+            if (t.getStatus().equals("in progress")){
+                taskEnCours.add(t);
+            }
+        }
+        return taskEnCours;
+    }
+    public List<Task> viewTaskTermine(int projectId) throws SQLException {
+        List<Task> allTask = new ArrayList<>();
+        String sql = "SELECT * FROM tasks WHERE projectId = ?";
+        Connection connection = com.DAO.DataBaseManager.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, projectId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Task task = new Task();
+            task.setId(resultSet.getInt("id"));
+            task.setProjectId(resultSet.getInt("projectId"));
+            task.setDescription(resultSet.getString("description"));
+            task.setStartDate(resultSet.getString("startDate"));
+            task.setEndDate(resultSet.getString("endDate"));
+            task.setStatus(resultSet.getString("status"));
+            allTask.add(task);
+        }
+        List<Task> taskEnCours = new ArrayList<>();
+        for(Task t : allTask){
+            if (t.getStatus().equals("finished")){
+                taskEnCours.add(t);
+            }
+        }
+        return taskEnCours;
+    }
 
     @Override
     public void updateTask(Integer id, Task task) throws SQLException {

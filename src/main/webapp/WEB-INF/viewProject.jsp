@@ -52,7 +52,7 @@
         </div>
         <form id="option">
             <select id="mySelect" onchange="location = this.value;">
-                <option>Select Option ...</option>
+                <option id="op">Select Option ...</option>
                 <c:forEach items="${P1}" var="P">
                     <option value="ViewProject?id=${P.id}">${P.name}</option>
                 </c:forEach>
@@ -85,6 +85,7 @@
                 </h1>
             </div>
         </div>
+
         <div class="projectView">
             <div class="project-info">
                 <h1><em>project</em></h1>
@@ -108,32 +109,63 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="project-info">
+                <h1><em>Task</em></h1>
+                <div class="task-info-wrapper">
+                    <div class="task-menu">
+                        <h4 class="btn-progress" id="btn1">in progress</h4>
+                        <h4 class="btn-finished" id="btn2">finished</h4>
+                    </div>
+                   <div class="tasks">
 
+                           <div class="encours">
+                                <div class="tache">
+                                    <h1>Task 1 Beta</h1>
+                                    <div class="dates">
+                                        <h2>2023-02-22</h2>
+                                        <h2>2023-03-21</h2>
+                                    </div >
+                                    <p>in progress</p>
+                                </div>
+                           </div>
+                           <div class="termine">
+
+                           </div>
+
+                   </div>
+                </div>
+            </div>
         </div>
     </section>
 </section>
 <script>
-    $(document).ready(function() {
-        $('#mySelect').on('change', function() {
-            var selectedValue = $(this).val();
-            $.ajax({
-                url: 'ViewProject',
-                type: 'GET',
-                data: { id: selectedValue },
-                success: function(response) {
-                    // Handle the response from the servlet
-                    $('#projectName').text(response.name);
-                    $('#projectDescription').text(response.description);
-                    $('#startDate').text(response.startDate);
-                    $('#endDate').text(response.endDate);
-                    $('#budget').text(response.budget + ' $');
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error: ' + error);
-                }
-            });
-        });
-    });
+
+    function changing(){
+        const btnP = document.getElementById("btn1")
+        const btnF = document.getElementById("btn2")
+        const encours = document.querySelector(".encours");
+        const termine  = document.querySelector(".termine");
+        btnP.addEventListener("click", ()=> {
+            btnP.style.color = "#ffe100"
+            btnP.style.background = "black"
+            btnF.style.color = "black"
+            btnF.style.background = "white"
+            encours.style.zIndex = "999"
+            termine.style.zIndex = "0"
+        })
+        btnF.addEventListener("click", ()=> {
+            btnF.style.color = "#ffe100"
+            btnF.style.background = "black"
+            btnP.style.color = "black"
+            btnP.style.background = "white"
+            termine.style.zIndex = "999"
+            encours.style.zIndex = "0"
+        })
+    }
+    changing();
+
+
 </script>
 </body>
 </html>

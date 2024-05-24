@@ -11,4 +11,5 @@ public interface ProjectDao {
     public Project ViewProjectById( Integer id)throws SQLException;
     public void updateProject(Integer id, Project project) throws SQLException;
     public void removeProject(Integer id) throws SQLException;
+    public Project gitOnlyProject() throws Exception;
 }

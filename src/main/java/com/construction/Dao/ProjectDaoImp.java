@@ -59,6 +59,11 @@ public class ProjectDaoImp implements ProjectDao{
         }
         return project;
     };
+    public Project gitOnlyProject() throws Exception{
+        Project Pr = new Project();
+
+        return Pr;
+    }
 
 
 
