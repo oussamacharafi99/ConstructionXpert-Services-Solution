@@ -15,6 +15,7 @@ public class ViewAll extends HttpServlet {
         ProjectDaoImp P1 = new ProjectDaoImp();
         try {
             request.setAttribute("P1" , P1.viewProject());
+            request.setAttribute("ProjectId", P1.viewProject().get(0));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

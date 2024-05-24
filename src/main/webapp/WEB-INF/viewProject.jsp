@@ -8,6 +8,7 @@
     <style>
         <%@include file="/CSS/dashboard.css"%>
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -38,6 +39,10 @@
         <div class="containers">
             <div class="icons">
                 <i class="fa-solid fa-diagram-project"></i>
+                <a href="#">Add project</a>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-diagram-project"></i>
                 <a href="#">All Projects</a>
             </div>
             <div class="icons">
@@ -47,6 +52,7 @@
         </div>
         <form id="option">
             <select id="mySelect" onchange="location = this.value;">
+                <option>Select Option ...</option>
                 <c:forEach items="${P1}" var="P">
                     <option value="ViewProject?id=${P.id}">${P.name}</option>
                 </c:forEach>
@@ -80,10 +86,54 @@
             </div>
         </div>
         <div class="projectView">
+            <div class="project-info">
+                <h1><em>project</em></h1>
+                <div class="project-info-wrapper">
+                    <div class="project-img">
+                        <img src="https://i.ibb.co/MkSfdMb/Adobe-Stock-346885050-Preview.jpg" width="100%"/>
+                    </div>
+                    <div class="project-content">
+                        <h1>${ProjectId.getName()}</h1>
+                        <br>
+                        <p>
+                            ${ProjectId.getDescription()}
+                        </p>
+                        <div class="project-C-date">
+                            <div class="dates">
+                                <h2>${ProjectId.getStartDate()}</h2>
+                                <h2>${ProjectId.getEndDate()}</h2>
+                            </div >
+                            <h4>${ProjectId.getBudget()} $</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
 </section>
-
+<script>
+    $(document).ready(function() {
+        $('#mySelect').on('change', function() {
+            var selectedValue = $(this).val();
+            $.ajax({
+                url: 'ViewProject',
+                type: 'GET',
+                data: { id: selectedValue },
+                success: function(response) {
+                    // Handle the response from the servlet
+                    $('#projectName').text(response.name);
+                    $('#projectDescription').text(response.description);
+                    $('#startDate').text(response.startDate);
+                    $('#endDate').text(response.endDate);
+                    $('#budget').text(response.budget + ' $');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error: ' + error);
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

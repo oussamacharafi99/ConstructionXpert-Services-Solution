@@ -29,7 +29,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background: #e1e1e1;
+    background: url("https://i.ibb.co/wpGTPRd/abstract-geometric-shapes-of-colorful-modern-pattern-background-vector.jpg")no-repeat top right/cover ;
 }
 header{
     width: 100%;
@@ -74,6 +74,7 @@ header{
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    background: #ffe100;
 }
 .login > button > i {
     color: var(--color-primary);
@@ -84,7 +85,8 @@ header{
 }
 .main{
     width: 100%;
-    height: 100vh;
+    height: 80%;
+    background: url("https://i.ibb.co/wpGTPRd/abstract-geometric-shapes-of-colorful-modern-pattern-background-vector.jpg")no-repeat top right/cover ;
 }
 .menu{
     width: 80%;
@@ -98,6 +100,9 @@ header{
     border-left: none;
     border-right: none;
     border-radius: 2px;
+    background: rgba(255, 255, 255, 0.42);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 10px #e3e3e3;
 }
 .logo{
     width: 100px;
@@ -109,17 +114,16 @@ header{
 }
 #mySelect {
     width: 200px;
-    padding: 10px;
+    padding: 15px;
     font-size: 16px;
-    border: 2px solid black;
-    border-radius: 5px;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #e1e1e1;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #ffffff;
     color: var(--color-dark);
     appearance: none;
     margin: 0 auto;
     outline: none;
+    box-shadow: 0 0 20px #d0d0d0;
 }
 .profile{
     display: flex;
@@ -127,44 +131,48 @@ header{
 }
 .profile > a {
     color: var(--color-dark);
-    font-size: 14px;
-    border: 1px solid var(--color-dark);
-    padding: 3.5px 7px;
+    font-size: 17px;
     border-radius: 7px;
 }
 .hero{
     width: 100%;
-    height: 500px;
-    display: flex;
-    background: #e1e1e1;
-}
-.menu_project{
-    width: 23%;
     height: 100%;
     display: flex;
-    align-items: center;
+    background: transparent;
+    justify-content: space-between;
+    padding: 20px 0 0 0 ;
+}
+.menu_project{
+    width: 10%;
+    height: 100%;
+    display: flex;
     text-align: right;
     justify-content: center;
 }
 .projectView{
-    width: 80%;
+    width: 85%;
     height: 100%;
     overflow: auto;
-    background: #e1e1e1;
-    border-left: 5px solid white;
-    border-top: 5px solid white;
-    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.37);
+    backdrop-filter: blur(10px);
+    border-left: 15px solid #ffe100;
+    border-top: 15px solid #ffe100;
+    border-top-left-radius: 80px;
+    box-shadow: 0 0 20px #818181;
 }
 .mini-menu{
-    width: 35%;
+    width: 80%;
     height: 70%;
     border-radius: 8px;
     background: white;
     box-shadow: 0 0 10px #ababab;
     display: flex;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: -30px;
+    margin-left: 30px;
 }
 .mini-menu > h1 {
     width: 90%;
@@ -195,10 +203,10 @@ header{
     justify-content: center;
     padding: 8px;
     margin: 3px;
-    border: 2px solid black;
-    border-radius: 5px;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #d0d0d0;
+
 }
 .icons > a {
     font-size: 8px;
@@ -232,4 +240,83 @@ header{
     font-weight: 400;
     text-decoration: none;
     color: var(--color-dark);
+}
+.project-info{
+    width: 90%;
+    height: 450px;
+    margin: 20px auto;
+}
+.project-info > h1 {
+    font-size: 25px;
+    font-weight: 900;
+    text-shadow: 8px 12px 20px rgb(33, 33, 33);
+    margin: 7px;
+}
+em{
+    color: #ffe100;
+    background: black;
+}
+.project-info-wrapper{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #b7b6b6;
+    padding: 10px 15px;
+}
+.project-img{
+    width: 55%;
+    height: 90%;
+}
+.project-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.project-content{
+    width: 40%;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+.project-content > h1{
+    padding: 5px 0 ;
+    font-size: 25px;
+    color: #ffe100;
+    background: black;
+    padding-left: 10px;
+}
+.project-content > p{
+    font-size: 14px;
+    text-align: justify;
+    color: black;
+    font-weight: 200;
+}
+.project-C-date{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+.dates {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.dates > h2{
+    font-size: 10px;
+    padding: 8px;
+    background: #ffe100;
+}
+.project-C-date > h1{
+    width: 40%;
+    padding: 10px;
+    color: black;
+    background: #ffe100;
+    font-size: 14px;
 }
