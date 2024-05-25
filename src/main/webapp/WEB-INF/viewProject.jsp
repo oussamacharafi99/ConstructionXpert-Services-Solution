@@ -120,14 +120,16 @@
                    <div class="tasks">
 
                            <div class="encours">
+                               <c:forEach  var="T" items="${T}">
                                 <div class="tache">
-                                    <h1>Task 1 Beta</h1>
+                                    <h1>${T.getDescription}</h1>
                                     <div class="dates">
-                                        <h2>2023-02-22</h2>
-                                        <h2>2023-03-21</h2>
+                                        <h2>${t.getStartDate}</h2>
+                                        <h2>${t.getEndDate}</h2>
                                     </div >
-                                    <p>in progress</p>
+                                    <p>${t.getStatus}</p>
                                 </div>
+                               </c:forEach>
                            </div>
                            <div class="termine">
 

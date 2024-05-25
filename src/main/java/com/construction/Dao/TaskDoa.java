@@ -10,6 +10,5 @@ public interface TaskDoa {
     public List<Task> viewTask(int projectId) throws SQLException;
     public void updateTask(Integer id, Task task) throws SQLException;
     public void removeTask(Integer id) throws SQLException;
-    public List<Task> viewTaskEnCours(int projectId) throws SQLException;
-    public List<Task> viewTaskTermine(int projectId) throws SQLException;
+
 }

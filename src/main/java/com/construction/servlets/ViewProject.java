@@ -1,6 +1,7 @@
 package com.construction.servlets;
 import com.construction.Dao.ProjectDaoImp;
 import com.construction.Dao.TaskDaoImp;
+import com.construction.classes.Task;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,11 +14,18 @@ public class ViewProject extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProjectDaoImp projectId = new ProjectDaoImp();
-        String id = request.getParameter("id");
-        Integer idP = Integer.valueOf(id);
+        TaskDaoImp taskId = new TaskDaoImp();
+        Integer idP = Integer.valueOf(request.getParameter("id"));
+
         try {
+            request.setAttribute("T" , taskId.viewTask(idP));
             request.setAttribute("ProjectId" , projectId.ViewProjectById(idP));
             request.setAttribute("P1" , projectId.viewProject());
+
+            for (Task t : taskId.viewTask(idP) ){
+                System.out.println("hfhfhfh 99999 " + t.getDescription());
+            }
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
