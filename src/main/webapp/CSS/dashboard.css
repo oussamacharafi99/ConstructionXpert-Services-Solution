@@ -213,9 +213,6 @@ header{
 .icons:hover{
     background: #d5d4d4;
 }
-#icons{
-    padding: 15px 0;
-}
 .icons > a {
     font-size: 8px;
     color: black;
@@ -526,4 +523,38 @@ em{
     top: -10px;
     right: -30px;
     cursor: pointer;
+}
+.formUpdateProject{
+    position: absolute;
+    width: 400px;
+    background: white;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.42);
+    border-radius: 7px;
+    top: 30px;
+    left: 400px;
+    z-index: 9999;
+    display: none;
+}
+.formUpdateProject > h1{
+    font-size: 25px;
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    cursor: pointer;
+}
+.formUpdateProject > h2{
+    font-weight: 800;
+    padding: 5px;
+}
+.formUpdateProject > h2 > em{
+    font-size: 15px;
+    color: black;
+    padding: 5px;
+    border-bottom: 5px solid black;
+    background: white;
+}
+.formUpdateProject > form{
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
 }

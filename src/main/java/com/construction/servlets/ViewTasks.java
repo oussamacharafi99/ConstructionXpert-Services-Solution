@@ -66,7 +66,21 @@ public class ViewTasks extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        ProjectDaoImp project = new ProjectDaoImp();
+        TaskDaoImp taskId = new TaskDaoImp();
 
+        try {
+            request.setAttribute("P1" , project.viewProject());
+            request.setAttribute("Project" , project.ViewProjectById(idProject));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            request.setAttribute("T" , taskId.viewTaskE(idProject));
+            request.setAttribute("Tu" , taskId.viewTaskT(idProject));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         this.getServletContext().getRequestDispatcher("/WEB-INF/viewProject.jsp").forward( request , response);
     }
 

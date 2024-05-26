@@ -68,14 +68,46 @@
             <button type="submit" class="btn btn-dark">Ajouter</button>
         </form>
     </div>
+    <div class="formUpdateProject">
+        <h2><em>Update Project</em></h2>
+        <h1 class="closeUpdateProject"><i class="fa-solid fa-circle-xmark"></i></h1>
+        <form action="updateProject" method="POST" class="mb-4">
+            <input type="hidden" name="itemId">
+            <div class="form-group">
+                <label for="itemName">Nom du projet</label>
+                <input type="text" class="form-control" id="itemName" name="idProject" value="${Project.getId()}" placeholder="Entrer nom">
+            </div>
+            <div class="form-group">
+                <label for="itemName">Nom du projet</label>
+                <input type="text" class="form-control" id="itemName" name="NameProject" value="${Project.getName()}" placeholder="Entrer nom">
+            </div>
+            <div class="form-group">
+                <label for="DateDebutProject">Date de début</label>
+                <input type="date" class="form-control" id="DateDebutProject" value="${Project.getStartDate()}" name="DateDebutProject">
+            </div>
+            <div class="form-group">
+                <label for="itemDateFin">Date de fin</label>
+                <input type="date" class="form-control" id="itemDateFin" name="DateFinProject" value="${Project.getEndDate()}" >
+            </div>
+            <div class="form-group">
+                <label for="itemBudget">Budget</label>
+                <input type="number" class="form-control" id="itemBudget" name="BudgetProject" value="${Project.getBudget()}"  placeholder="Entrer budget">
+            </div>
+            <div class="form-group">
+                <label for="itemDescription">Description</label>
+                <textarea class="form-control" id="itemDescription" name="DescriptionProject"placeholder="Entrer description">${Project.getDescription()}</textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Update</button>
+        </form>
+    </div>
     <div class="menu">
         <div class="logo">
             <img src="https://i.ibb.co/BctDWFW/Gold-Black-Modern-Real-Estate-Logo.png" width="100%">
         </div>
         <div class="containers">
-            <div class="icons" id="icons">
+            <div class="icons updateProject" id="icons">
                 <i class="fa-solid fa-diagram-project"></i>
-                <a href="#">All Projects</a>
+                <a href="#">Update Projects</a>
             </div>
             <div class="icons addProject" >
                 <i class="fa-solid fa-diagram-project"></i>
@@ -158,7 +190,7 @@
                                     <div class="row">
                                         <div class="col" style="display:none;">
                                             <label for="DateDebutProject">Date de début</label>
-                                            <input type="date" class="form-control" value="${Project.getId()}"  name="idProject">
+                                            <input type="number" class="form-control" value="${Project.getId()}"  name="idProject">
                                         </div>
                                         <div class="col">
                                             <label for="DateDebutProject">Date de début</label>
@@ -329,6 +361,14 @@
             document.querySelector(".formAddProject").style.display = "none"
         })
     }
+    function updateProject() {
+        document.querySelector(".updateProject").addEventListener("click", () => {
+            document.querySelector(".formUpdateProject").style.display = "block"
+        })
+        document.querySelector(".closeUpdateProject").addEventListener("click", () => {
+            document.querySelector(".formUpdateProject").style.display = "none"
+        })
+    }
 
     function addTasks() {
         document.querySelector(".btn3").addEventListener("click", () => {
@@ -367,6 +407,7 @@
             })
         }
     }
+    updateProject();
     addTasks();
     alerting2();
     alerting();

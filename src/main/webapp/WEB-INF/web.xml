@@ -38,4 +38,13 @@
         <servlet-name>AddProject</servlet-name>
         <url-pattern>/addprojects</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateProject</servlet-name>
+        <servlet-class>com.construction.servlets.UpdateProject</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateProject</servlet-name>
+        <url-pattern>/updateProject</url-pattern>
+    </servlet-mapping>
 </web-app>
