@@ -6,6 +6,14 @@ public class Task {
     public Task() {
     }
 
+    public Task(int projectId, String description, String startDate, String endDate, String status) {
+        this.projectId = projectId;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.status = status;
+    }
+
     private int id;
     private int projectId;
     private String description;

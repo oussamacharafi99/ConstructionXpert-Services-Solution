@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         <%@include file="/CSS/dashboard.css"%>
     </style>
@@ -12,6 +13,13 @@
     <title>Document</title>
 </head>
 <body>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>The Project !</strong> <strong id="texte"></strong>
+    <button type="button" id="closes" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<p style="display: none" id="alerT">${alert}</p>
 <header>
     <div class="contact">
         <div class="email">
@@ -32,22 +40,50 @@
     </div>
 </header>
 <section class="main">
+    <div class="formAddProject">
+        <h2><em>Add Project</em></h2>
+        <h1 class="closeAddProject"><i class="fa-solid fa-circle-xmark"></i></h1>
+        <form action="addprojects" method="POST" class="mb-4">
+            <input type="hidden" name="itemId">
+            <div class="form-group">
+                <label for="itemName">Nom du projet</label>
+                <input type="text" class="form-control" id="itemName" name="NameProject" placeholder="Entrer nom">
+            </div>
+            <div class="form-group">
+                <label for="DateDebutProject">Date de début</label>
+                <input type="date" class="form-control" id="DateDebutProject" name="DateDebutProject">
+            </div>
+            <div class="form-group">
+                <label for="itemDateFin">Date de fin</label>
+                <input type="date" class="form-control" id="itemDateFin" name="DateFinProject" >
+            </div>
+            <div class="form-group">
+                <label for="itemBudget">Budget</label>
+                <input type="number" class="form-control" id="itemBudget" name="BudgetProject"  placeholder="Entrer budget">
+            </div>
+            <div class="form-group">
+                <label for="itemDescription">Description</label>
+                <textarea class="form-control" id="itemDescription" name="DescriptionProject" placeholder="Entrer description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Ajouter</button>
+        </form>
+    </div>
     <div class="menu">
         <div class="logo">
             <img src="https://i.ibb.co/BctDWFW/Gold-Black-Modern-Real-Estate-Logo.png" width="100%">
         </div>
         <div class="containers">
-            <div class="icons">
+            <div class="icons" id="icons">
+                <i class="fa-solid fa-diagram-project"></i>
+                <a href="#">All Projects</a>
+            </div>
+            <div class="icons addProject" >
                 <i class="fa-solid fa-diagram-project"></i>
                 <a href="#">Add project</a>
             </div>
             <div class="icons">
                 <i class="fa-solid fa-diagram-project"></i>
-                <a href="#">All Projects</a>
-            </div>
-            <div class="icons">
-                <i class="fa-solid fa-diagram-project"></i>
-                <a href="#">Finished projects</a>
+                <a href="addprojects?idD=${Project.getId()}">Finished projects</a>
             </div>
         </div>
         <form id="option">
@@ -114,6 +150,44 @@
                     <div class="task-menu">
                         <h4 class="btn-progress" id="btn1">In Progress</h4>
                         <h4 class="btn-finished" id="btn2">Finished</h4>
+                        <button class="btn btn-outline-primary btn3" id="btn3">Add Task</button>
+
+                        <div class="formAddTask">
+                            <h1 class="closeAddTask"><i class="fa-solid fa-circle-xmark"></i></h1>
+                            <form action="viewTask" method="POST" class="mb-4">
+                                    <div class="row">
+                                        <div class="col" style="display:none;">
+                                            <label for="DateDebutProject">Date de début</label>
+                                            <input type="date" class="form-control" value="${Project.getId()}"  name="idProject">
+                                        </div>
+                                        <div class="col">
+                                            <label for="DateDebutProject">Date de début</label>
+                                            <input type="date" class="form-control" id="DateDebutProject" name="DateDebutTask">
+                                        </div>
+                                        <div class="col">
+                                            <label for="DateDebutProject">Date de début</label>
+                                            <input type="date" class="form-control" id="DateDebutProject" name="DateFinTask">
+                                        </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="itemDescription">Description</label>
+                                        <textarea class="form-control" id="itemDescription" name="DescriptionTask" placeholder="Entrer description"></textarea>
+                                    </div>
+                                    <div class="col mt-5">
+                                        <select class="custom-select" id="inputGroupSelect01" name="statusTask">
+                                            <option selected>Choose...</option>
+                                            <option value="To Do">To Do</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="In Progress">In Progress</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-dark mt-3">Ajouter</button>
+                            </form>
+                        </div>
+
                     </div>
                     <div class="tasks">
                         <div class="encours">
@@ -146,7 +220,7 @@
                                     </div>
                                     <div class="controls-tache">
                                         <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
-                                       <a href="viewTask?idT=${T.getId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                        <a href="viewTask?idT=${T.getId()}&idP=${T.getProjectId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
                                         <button><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button><i class="fa-solid fa-pen-to-square"></i></button>
@@ -199,6 +273,7 @@
             encours.style.zIndex = "0";
         });
     }
+
     function changing2() {
         document.querySelectorAll(".controls-tache").forEach((cours) => {
 
@@ -221,13 +296,15 @@
             });
         });
     }
-    function scrolling(value1 , value2) {
+
+    function scrolling(value1, value2) {
         const projectView = document.querySelector('.projectView');
         const menu = document.querySelector('.borderM');
-        projectView.scrollTo({ top: value1, behavior: 'smooth' });
+        projectView.scrollTo({top: value1, behavior: 'smooth'});
         menu.style.transition = ".6s"
         menu.style.top = value2 + "px";
     }
+
     document.querySelector('.projectView').addEventListener('scroll', () => {
         const projectView = document.querySelector('.projectView');
         const menu = document.querySelector('.borderM');
@@ -243,8 +320,60 @@
             menu.style.top = "195px";
         }
     });
+
+    function addProjects() {
+        document.querySelector(".addProject").addEventListener("click", () => {
+            document.querySelector(".formAddProject").style.display = "block"
+        })
+        document.querySelector(".closeAddProject").addEventListener("click", () => {
+            document.querySelector(".formAddProject").style.display = "none"
+        })
+    }
+
+    function addTasks() {
+        document.querySelector(".btn3").addEventListener("click", () => {
+            document.querySelector(".formAddTask").style.display = "block"
+        })
+        document.querySelector(".closeAddTask").addEventListener("click", () => {
+            document.querySelector(".formAddTask").style.display = "none"
+        })
+    }
+
+    function alerting(){
+        let checked = false;
+        if (document.getElementById("alerT").innerHTML === "."){
+            document.getElementById("texte").innerText = "has been added successfully"
+            document.querySelector(".alert").style.display ="flex";
+            checked = true;
+        }
+        if (checked === true){
+            document.getElementById("closes").addEventListener("click" , ()=>{
+                document.querySelector(".alert").style.display ="none";
+                checked = false;
+            })
+        }
+    }
+    function alerting2(){
+        let checked = false;
+        if (document.getElementById("alerT").innerHTML === ".."){
+            document.getElementById("texte").innerText = "has been successfully deleted"
+            document.querySelector(".alert").style.display ="flex";
+            checked = true;
+        }
+        if (checked === true){
+            document.getElementById("closes").addEventListener("click" , ()=>{
+                document.querySelector(".alert").style.display ="none";
+                checked = false;
+            })
+        }
+    }
+    addTasks();
+    alerting2();
+    alerting();
+    addProjects();
     changing2();
     changing();
+
 </script>
 </body>
 </html>

@@ -55,7 +55,19 @@ public class ViewTasks extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        TaskDaoImp task = new TaskDaoImp();
+        int idProject = Integer.parseInt(request.getParameter("idProject"));
+        String dateDubetTask = request.getParameter("DateDebutTask");
+        String dateFinTask = request.getParameter("DateFinTask");
+        String status = request.getParameter("statusTask");
+        String descriptionTask = request.getParameter("DescriptionTask");
+        try {
+            task.addTask(new Task(idProject , descriptionTask , dateDubetTask , dateFinTask , status));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
+        this.getServletContext().getRequestDispatcher("/WEB-INF/viewProject.jsp").forward( request , response);
     }
 
 }

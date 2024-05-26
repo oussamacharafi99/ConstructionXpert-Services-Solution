@@ -29,4 +29,13 @@
         <servlet-name>ViewAll</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddProject</servlet-name>
+        <servlet-class>com.construction.servlets.AddProject</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddProject</servlet-name>
+        <url-pattern>/addprojects</url-pattern>
+    </servlet-mapping>
 </web-app>

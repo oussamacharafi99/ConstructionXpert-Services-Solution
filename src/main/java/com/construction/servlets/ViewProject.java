@@ -18,7 +18,6 @@ public class ViewProject extends HttpServlet {
         Integer idP = Integer.valueOf(request.getParameter("id"));
 
         try {
-
             request.setAttribute("P1" , project.viewProject());
 
         } catch (SQLException e) {
