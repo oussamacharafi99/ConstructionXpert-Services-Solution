@@ -18,6 +18,7 @@ public class ViewAll extends HttpServlet {
         try {
             Integer idP = P1.viewProject().get(0).getId();
             request.setAttribute("T" , taskId.viewTaskE(idP));
+            request.setAttribute("Tu" , taskId.viewTaskT(idP));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -26,7 +27,7 @@ public class ViewAll extends HttpServlet {
             request.setAttribute("P1", P1.viewProject());
 
             if (!P1.viewProject().isEmpty()) {
-                request.setAttribute("ProjectId", P1.viewProject().get(0));
+                request.setAttribute("Project", P1.viewProject().get(0));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

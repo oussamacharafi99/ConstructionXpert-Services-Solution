@@ -65,50 +65,51 @@
     <section class="hero">
         <div class="menu_project">
             <div class="mini-menu">
-                <h1 id="p">
+                <h1 onclick="scrolling(0 , 0)">
                     <i class="fa-solid fa-diagram-project"></i>
-                    <a href="#">Project</a>
+                    <p >Project</p>
                 </h1>
-                <h1>
+                <h1 onclick="scrolling(500 , 95)">
                     <i class="fa-solid fa-list-check"></i>
-                    <a href="#">Tasks</a>
+                    <p >Tasks</p>
                 </h1>
-                <h1>
+                <h1 onclick="scrolling(1100 , 195)">
                     <i class="fa-brands fa-osi"></i>
-                    <a href="#">Resources</a>
+                    <p >Resources</p>
                 </h1>
                 <h1>
                     <i class="fa-solid fa-chart-simple"></i>
-                    <a href="#">Statistics</a>
+                    <p >Statistics</p>
                 </h1>
+                <h1 class="borderM"></h1>
             </div>
         </div>
         <div class="projectView">
             <div class="project-info">
-                <h1><em>Project</em></h1>
+                <h1 id="projectt"><em>Project</em></h1>
                 <div class="project-info-wrapper">
                     <div class="project-img">
                         <img src="https://i.ibb.co/MkSfdMb/Adobe-Stock-346885050-Preview.jpg" width="100%"/>
                     </div>
                     <div class="project-content">
-                        <h1>${ProjectId.getName()}</h1>
+                        <h1>${Project.getName()}</h1>
                         <br>
                         <p>
-                            ${ProjectId.getDescription()}
+                            ${Project.getDescription()}
                         </p>
                         <div class="project-C-date">
                             <div class="dates">
-                                <h2>${ProjectId.getStartDate()}</h2>
-                                <h2>${ProjectId.getEndDate()}</h2>
+                                <h2>${Project.getStartDate()}</h2>
+                                <h2>${Project.getEndDate()}</h2>
                             </div>
-                            <h4>${ProjectId.getBudget()} $</h4>
+                            <h4>${Project.getBudget()} $</h4>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
             <div class="project-info">
-                <h1><em>Task</em></h1>
+                <h1 id="taskk"><em>Task</em></h1>
                 <div class="task-info-wrapper">
                     <div class="task-menu">
                         <h4 class="btn-progress" id="btn1">In Progress</h4>
@@ -126,7 +127,7 @@
                                     </div>
                                     <div class="controls-tache">
                                         <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
-                                        <a href="viewTask?idT=${T.getId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                        <a href="viewTask?idT=${T.getId()}&idP=${T.getProjectId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
                                         <button><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button><i class="fa-solid fa-pen-to-square"></i></button>
@@ -159,15 +160,14 @@
 
             <div class="project-info">
 
-                <h1><em>Resource</em></h1>
-                <c:forEach var="re" items="${ressource}">
+                <h1 id="resourcee"><em>Resource</em></h1>
                 <div class="project-info-wrapper">
+                    <c:forEach var="re" items="${ressource}">
                     <div class="project-img">
                         <p>${re.getName()}</p>
                     </div>
-
+                    </c:forEach>
                 </div>
-                </c:forEach>
 
             </div>
             </div>
@@ -207,7 +207,7 @@
             cours.addEventListener("mouseenter", () => {
                 if (check) {
                     cours.style.transition = ".6s"
-                    cours.style.width = "100%"
+                    cours.style.width = "80%"
                     check = false;
                 }
             });
@@ -221,6 +221,28 @@
             });
         });
     }
+    function scrolling(value1 , value2) {
+        const projectView = document.querySelector('.projectView');
+        const menu = document.querySelector('.borderM');
+        projectView.scrollTo({ top: value1, behavior: 'smooth' });
+        menu.style.transition = ".6s"
+        menu.style.top = value2 + "px";
+    }
+    document.querySelector('.projectView').addEventListener('scroll', () => {
+        const projectView = document.querySelector('.projectView');
+        const menu = document.querySelector('.borderM');
+
+        if (projectView.scrollTop === 0) {
+            menu.style.transition = ".6s"
+            menu.style.top = "0px";
+        } else if (projectView.scrollTop >= 500 && projectView.scrollTop < 700) {
+            menu.style.transition = ".6s"
+            menu.style.top = "95px";
+        } else if (projectView.scrollTop >= 700) {
+            menu.style.transition = ".6s"
+            menu.style.top = "195px";
+        }
+    });
     changing2();
     changing();
 </script>

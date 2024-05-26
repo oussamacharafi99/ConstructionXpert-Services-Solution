@@ -14,19 +14,19 @@ import java.sql.SQLException;
 public class ViewProject extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProjectDaoImp projectId = new ProjectDaoImp();
+        ProjectDaoImp project = new ProjectDaoImp();
         Integer idP = Integer.valueOf(request.getParameter("id"));
 
         try {
 
-            request.setAttribute("P1" , projectId.viewProject());
+            request.setAttribute("P1" , project.viewProject());
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
         try {
-            request.setAttribute("ProjectId" , projectId.ViewProjectById(idP));
+            request.setAttribute("Project" , project.ViewProjectById(idP));
 
 
         } catch (SQLException e) {

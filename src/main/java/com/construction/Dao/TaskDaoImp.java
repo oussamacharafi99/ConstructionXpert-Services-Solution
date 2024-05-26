@@ -96,34 +96,73 @@ public class TaskDaoImp implements TaskDoa{
         preparedStatement.executeUpdate();
     }
 
+
     @Override
     public Project findProjetById(Integer id) throws SQLException {
         Project project = null;
-        String sql="SELECT projectId FROM tasks WHERE id=?";
-        Connection connection = com.DAO.DataBaseManager.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setInt(1,id);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        Integer idProjet=0;
-        while (resultSet.next()) {
-          idProjet= resultSet.getInt("projectId");
-        }
-        String sqls = "SELECT * FROM projects WHERE id = ?";
-        Connection connectio = com.DAO.DataBaseManager.getConnection();
-        PreparedStatement s = connectio.prepareStatement(sqls);
-        s.setInt(1, idProjet);
-        ResultSet resultSett = preparedStatement.executeQuery();
-        if (resultSett.next()) {
-            String projectName = resultSett.getString("name");
-            String projectDescription = resultSett.getString("description");
-            String startDate = resultSett.getString("startDate");
-            String endDate = resultSett.getString("endDate");
-            Double budget = resultSett.getDouble("budget");
-            project = new Project(idProjet, projectName, projectDescription, startDate, endDate, budget);
-        }
-        return project;
+        String sqlTask = "SELECT projectId FROM tasks WHERE id = ?";
+        String sqlProject = "SELECT * FROM projects WHERE id = ?";
+        PreparedStatement preparedStatementTask = null;
+        PreparedStatement preparedStatementProject = null;
+        ResultSet resultSetTask = null;
+        ResultSet resultSetProject = null;
+//        ---------------------
+            Connection connection = com.DAO.DataBaseManager.getConnection();
+            preparedStatementTask = connection.prepareStatement(sqlTask);
+            preparedStatementTask.setInt(1, id);
+            resultSetTask = preparedStatementTask.executeQuery();
 
-        }
+            Integer projectId = null;
+            if (resultSetTask.next()) {
+                projectId = resultSetTask.getInt("projectId");
+            }
+            if (projectId == null) {
+                return null;
+            }
+//        ---------------------
+            preparedStatementProject = connection.prepareStatement(sqlProject);
+            preparedStatementProject.setInt(1, projectId);
+            resultSetProject = preparedStatementProject.executeQuery();
+
+            if (resultSetProject.next()) {
+                String projectName = resultSetProject.getString("name");
+                String projectDescription = resultSetProject.getString("description");
+                String startDate = resultSetProject.getString("startDate");
+                String endDate = resultSetProject.getString("endDate");
+                Double budget = resultSetProject.getDouble("budget");
+
+                project = new Project(projectId, projectName, projectDescription, startDate, endDate, budget);
+            }
+        return project;
+    }
+
+//    public Project findProjetById(Integer id) throws SQLException {
+//        Project project = null;
+//        String sql="SELECT projectId FROM tasks WHERE id=?";
+//        Connection connection = com.DAO.DataBaseManager.getConnection();
+//        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//        preparedStatement.setInt(1,id);
+//        ResultSet resultSet = preparedStatement.executeQuery();
+//        Integer idProjet=0;
+//        while (resultSet.next()) {
+//          idProjet= resultSet.getInt("projectId");
+//        }
+//        String sqls = "SELECT * FROM projects WHERE id = ?";
+//        Connection connectio = com.DAO.DataBaseManager.getConnection();
+//        PreparedStatement s = connectio.prepareStatement(sqls);
+//        s.setInt(1, idProjet);
+//        ResultSet resultSett = preparedStatement.executeQuery();
+//        if (resultSett.next()) {
+//            String projectName = resultSett.getString("name");
+//            String projectDescription = resultSett.getString("description");
+//            String startDate = resultSett.getString("startDate");
+//            String endDate = resultSett.getString("endDate");
+//            Double budget = resultSett.getDouble("budget");
+//            project = new Project(idProjet, projectName, projectDescription, startDate, endDate, budget);
+//        }
+//        return project;
+//
+//        }
 
     }
 
