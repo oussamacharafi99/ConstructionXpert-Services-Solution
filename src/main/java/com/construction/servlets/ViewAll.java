@@ -1,6 +1,7 @@
 package com.construction.servlets;
 
 import com.construction.Dao.ProjectDaoImp;
+import com.construction.Dao.TaskDaoImp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,17 +14,27 @@ public class ViewAll extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProjectDaoImp P1 = new ProjectDaoImp();
-
+        TaskDaoImp taskId = new TaskDaoImp();
         try {
-            request.setAttribute("P1" , P1.viewProject());
-            request.setAttribute("ProjectId", P1.viewProject().get(0));
+            Integer idP = P1.viewProject().get(0).getId();
+            request.setAttribute("T" , taskId.viewTaskE(idP));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+
+            request.setAttribute("P1", P1.viewProject());
+
+            if (!P1.viewProject().isEmpty()) {
+                request.setAttribute("ProjectId", P1.viewProject().get(0));
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         this.getServletContext().getRequestDispatcher("/WEB-INF/viewProject.jsp").forward( request , response);
     }
 
-    @Override
+        @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

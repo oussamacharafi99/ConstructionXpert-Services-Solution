@@ -1,5 +1,7 @@
 package com.construction.classes;
 
+import java.util.ArrayList;
+
 public class Task {
     public Task() {
     }
@@ -10,6 +12,7 @@ public class Task {
     private String startDate;
     private String endDate;
     private String status;
+
 
     public int getId() {
         return id;

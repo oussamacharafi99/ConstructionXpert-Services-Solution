@@ -68,13 +68,12 @@ header{
 }
 .login > button{
     padding: 6px 14px;
-    color: var(--color-primary);
     font-size: 17px;
     font-weight: 700;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    background: #ffe100;
+    background: #ffffff;
 }
 .login > button > i {
     color: var(--color-primary);
@@ -153,12 +152,12 @@ header{
     width: 85%;
     height: 100%;
     overflow: auto;
-    background: rgba(255, 255, 255, 0.37);
+    background: rgba(241, 241, 241, 0.37);
     backdrop-filter: blur(10px);
-    border-left: 15px solid #ffe100;
-    border-top: 15px solid #ffe100;
+    border-left: 15px solid rgba(255, 255, 255, 0.37);
+    border-top: 15px solid rgba(255, 255, 255, 0.37);
     border-top-left-radius: 80px;
-    box-shadow: 0 0 20px #818181;
+    box-shadow: 0 0 10px #d0cece;
 }
 .mini-menu{
     width: 80%;
@@ -249,12 +248,11 @@ header{
 .project-info > h1 {
     font-size: 25px;
     font-weight: 900;
-    text-shadow: 8px 12px 20px rgb(33, 33, 33);
     margin: 7px;
 }
 em{
-    color: #ffe100;
-    background: black;
+    color: #000000;
+    background: #e5e5e5;
 }
 .project-info-wrapper{
     width: 100%;
@@ -263,7 +261,6 @@ em{
     justify-content: space-between;
     align-items: center;
     border-radius: 12px;
-    box-shadow: 0 0 10px #b7b6b6;
     padding: 10px 15px;
     background: white;
 }
@@ -282,10 +279,11 @@ em{
     padding: 10px 12px;
 }
 .project-content > h1{
-    padding: 5px 0 ;
+    padding: 10px;
     font-size: 25px;
-    color: #ffe100;
-    background: black;
+    color: #000000;
+    background: #e5e5e5;
+    border-left: 4px solid black;
     padding-left: 10px;
 }
 .project-content > p{
@@ -312,14 +310,14 @@ em{
 }
 .dates > h2{
     font-size: 10px;
-    padding: 8px;
-    background: #ffe100;
+    padding: 8px 4px;
+    font-weight: 200;
 }
 .project-C-date > h1{
     width: 40%;
     padding: 10px;
     color: black;
-    background: #ffe100;
+    background: #bababa;
     font-size: 14px;
 }
 #op{
@@ -334,7 +332,6 @@ em{
     width: 100%;
     height: 90%;
     border-radius: 12px;
-    box-shadow: 0 0 10px #b7b6b6;
     padding: 10px 15px;
     background: white;
 }
@@ -356,9 +353,9 @@ em{
     cursor: pointer;
     transition: .6s;
 }
-.task-menu > h4:hover{
-    background: black;
-    color: #ffe100;
+.task-menu > h4:hover,#btn1{
+    background: #000000;
+    color: #ffffff;
 }
 .tasks{
     width: 100%;
@@ -373,46 +370,76 @@ em{
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 7;
+    z-index: 8;
     padding: 15px;
     background: white;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
 }
 .termine{
     width: 100%;
     height: 100%;
-    background: green;
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 6;
+    z-index: 7;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    background: green;
 }
 .tache{
-    width: 35%;
+    width: 32%;
+    height: 150px;
     padding: 7px 14px;
-    border-left: 10px solid black;
-    box-shadow: 0 0 10px #cecbcb;
+    box-shadow: 4px 4px 15px #e0dfdf;
+    margin: 3px;
+    border-radius: 7px;
 }
 .tache > h1 {
-    font-size: 27px;
+    font-size: 18px;
     font-weight: 700;
     color: black;
 }
 .tache > .dates {
-    width: 80%;
-    height: 100%;
+    width: 90%;
+    height: 40px;
     display: flex;
     align-items: center;
-    border-left: 5px solid black;
+    border-radius: 5px;
 }
 .dates > h2{
     font-size: 10px;
-    padding: 8px;
-    background: #ffe100;
+    padding: 8px 4px;
     margin: 3px;
 }
-.tache > p {
-    font-size: 12px;
-    font-weight: 300;
+
+.controls-tache{
+    width: 35px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+.controls-tache > button{
+    padding: 10px 14px;
+    background: white;
+    border: none;
+}
+.controls-tache > h6{
+    padding: 10px 14px;
+    background: white;
+}
+.setting{
+    margin-right: 30px;
     color: black;
-    padding-left: 20px;
+}
+.setting > i{
+    color: black;
+    font-size: 20px;
 }

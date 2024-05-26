@@ -32,8 +32,8 @@ public class ProjectDaoImp implements ProjectDao{
             Integer project_id = r.getInt("id");
             String project_name = r.getString("name");
             String project_description = r.getString("description");
-            String startDate = r.getString("description");
-            String endDate = r.getString("description");
+            String startDate = r.getString("startDate");
+            String endDate = r.getString("endDate");
             Double budjet = r.getDouble("budget");
             allProjects.add(new Project(project_id, project_name, project_description, startDate , endDate, budjet));
         }

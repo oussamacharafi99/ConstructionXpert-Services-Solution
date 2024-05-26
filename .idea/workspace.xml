@@ -11,9 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/ProjectDaoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +190,9 @@
       <workItem from="1716480758291" duration="4596000" />
       <workItem from="1716512464696" duration="12207000" />
       <workItem from="1716559147695" duration="8944000" />
-      <workItem from="1716638542136" duration="2074000" />
+      <workItem from="1716638542136" duration="6514000" />
+      <workItem from="1716654466913" duration="13798000" />
+      <workItem from="1716678756696" duration="4405000" />
     </task>
     <servers />
   </component>
@@ -193,5 +201,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -58,7 +58,6 @@
                 </c:forEach>
             </select>
         </form>
-
         <div class="profile">
             <a href="#"><i class="fa-regular fa-id-card"></i></a>
         </div>
@@ -72,7 +71,6 @@
                 </h1>
                 <h1>
                     <i class="fa-solid fa-list-check"></i>
-
                     <a href="#">Tasks</a>
                 </h1>
                 <h1>
@@ -81,14 +79,13 @@
                 </h1>
                 <h1>
                     <i class="fa-solid fa-chart-simple"></i>
-                    <a href="#">statistics</a>
+                    <a href="#">Statistics</a>
                 </h1>
             </div>
         </div>
-
         <div class="projectView">
             <div class="project-info">
-                <h1><em>project</em></h1>
+                <h1><em>Project</em></h1>
                 <div class="project-info-wrapper">
                     <div class="project-img">
                         <img src="https://i.ibb.co/MkSfdMb/Adobe-Stock-346885050-Preview.jpg" width="100%"/>
@@ -103,7 +100,7 @@
                             <div class="dates">
                                 <h2>${ProjectId.getStartDate()}</h2>
                                 <h2>${ProjectId.getEndDate()}</h2>
-                            </div >
+                            </div>
                             <h4>${ProjectId.getBudget()} $</h4>
                         </div>
                     </div>
@@ -114,60 +111,118 @@
                 <h1><em>Task</em></h1>
                 <div class="task-info-wrapper">
                     <div class="task-menu">
-                        <h4 class="btn-progress" id="btn1">in progress</h4>
-                        <h4 class="btn-finished" id="btn2">finished</h4>
+                        <h4 class="btn-progress" id="btn1">In Progress</h4>
+                        <h4 class="btn-finished" id="btn2">Finished</h4>
                     </div>
-                   <div class="tasks">
-
-                           <div class="encours">
-                               <c:forEach  var="T" items="${T}">
+                    <div class="tasks">
+                        <div class="encours">
+                            <c:forEach var="T" items="${T}">
                                 <div class="tache">
-                                    <h1>${T.getDescription}</h1>
+                                    <h1>${T.getDescription()}</h1>
                                     <div class="dates">
-                                        <h2>${t.getStartDate}</h2>
-                                        <h2>${t.getEndDate}</h2>
-                                    </div >
-                                    <p>${t.getStatus}</p>
+                                        <h2>${T.getStartDate()}</h2>
+                                         <p>---></p>
+                                        <h2>${T.getEndDate()}</h2>
+                                    </div>
+                                    <div class="controls-tache">
+                                        <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
+                                        <a href="viewTask?idT=${T.getId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                    </div>
                                 </div>
-                               </c:forEach>
-                           </div>
-                           <div class="termine">
-
-                           </div>
-
-                   </div>
+                            </c:forEach>
+                        </div>
+                        <div class="termine">
+                            <c:forEach var="T" items="${Tu}">
+                                <div class="tache">
+                                    <h1>${T.getDescription()}</h1>
+                                    <div class="dates">
+                                        <h2>${T.getStartDate()}</h2>
+                                        <p>---></p>
+                                        <h2>${T.getEndDate()}</h2>
+                                    </div>
+                                    <div class="controls-tache">
+                                        <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
+                                       <a href="viewTask?idT=${T.getId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                        </div>
+                    </div>
                 </div>
+
+            <div class="project-info">
+
+                <h1><em>Resource</em></h1>
+                <c:forEach var="re" items="${ressource}">
+                <div class="project-info-wrapper">
+                    <div class="project-img">
+                        <p>${re.getName()}</p>
+                    </div>
+
+                </div>
+                </c:forEach>
+
             </div>
-        </div>
+            </div>
+
+
+
     </section>
 </section>
 <script>
-
-    function changing(){
-        const btnP = document.getElementById("btn1")
-        const btnF = document.getElementById("btn2")
+    function changing() {
+        const btnP = document.getElementById("btn1");
+        const btnF = document.getElementById("btn2");
         const encours = document.querySelector(".encours");
-        const termine  = document.querySelector(".termine");
-        btnP.addEventListener("click", ()=> {
-            btnP.style.color = "#ffe100"
-            btnP.style.background = "black"
-            btnF.style.color = "black"
-            btnF.style.background = "white"
-            encours.style.zIndex = "999"
-            termine.style.zIndex = "0"
-        })
-        btnF.addEventListener("click", ()=> {
-            btnF.style.color = "#ffe100"
-            btnF.style.background = "black"
-            btnP.style.color = "black"
-            btnP.style.background = "white"
-            termine.style.zIndex = "999"
-            encours.style.zIndex = "0"
-        })
+        const termine = document.querySelector(".termine");
+        btnP.addEventListener("click", () => {
+            btnP.style.color = "white";
+            btnP.style.background = "black";
+            btnF.style.color = "black";
+            btnF.style.background = "white";
+            encours.style.zIndex = "999";
+            termine.style.zIndex = "0";
+        });
+        btnF.addEventListener("click", () => {
+            btnF.style.color = "white";
+            btnF.style.background = "black";
+            btnP.style.color = "black";
+            btnP.style.background = "white";
+            termine.style.zIndex = "999";
+            encours.style.zIndex = "0";
+        });
     }
+    function changing2() {
+        document.querySelectorAll(".controls-tache").forEach((cours) => {
+
+            let check = true;
+
+            cours.addEventListener("mouseenter", () => {
+                if (check) {
+                    cours.style.transition = ".6s"
+                    cours.style.width = "100%"
+                    check = false;
+                }
+            });
+
+            cours.addEventListener("mouseleave", () => {
+                if (!check) {
+                    cours.style.transition = ".6s"
+                    cours.style.width = "35px"
+                    check = true;
+                }
+            });
+        });
+    }
+    changing2();
     changing();
-
-
 </script>
 </body>
 </html>
