@@ -14,4 +14,7 @@ public interface TaskDoa {
     public void updateTask(Integer id, Task task) throws SQLException;
     public void removeTask(Integer id) throws SQLException;
     public Project findProjetById(Integer id)throws SQLException;
+    public int getCompletedTaskCount(int projectId) throws SQLException;
+    public int getToDoTaskCount(int projectId) throws SQLException;
+    public int getInProgressTaskCount(int projectId) throws SQLException;
 }

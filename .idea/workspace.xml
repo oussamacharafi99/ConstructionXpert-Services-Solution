@@ -11,12 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/AddResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/AddResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,6 +187,8 @@
       <workItem from="1716654466913" duration="13798000" />
       <workItem from="1716678756696" duration="14671000" />
       <workItem from="1716741666653" duration="36459000" />
+      <workItem from="1716786965678" duration="703000" />
+      <workItem from="1716788153042" duration="1277000" />
     </task>
     <servers />
   </component>

@@ -164,5 +164,44 @@ public class TaskDaoImp implements TaskDoa{
 //
 //        }
 
+    public int getCompletedTaskCount(int projectId) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM tasks WHERE projectId = ? AND status = 'Completed'";
+        try (Connection connection = com.DAO.DataBaseManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, projectId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        }
+        return 0;
+    }
+
+    public int getToDoTaskCount(int projectId) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM tasks WHERE projectId = ? AND status = 'To Do'";
+        try (Connection connection = com.DAO.DataBaseManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, projectId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        }
+        return 0;
+    }
+
+    public int getInProgressTaskCount(int projectId) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM tasks WHERE projectId = ? AND status = 'In Progress'";
+        try (Connection connection = com.DAO.DataBaseManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, projectId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        }
+        return 0;
+    }
+
     }
 

@@ -120,7 +120,7 @@
         </div>
         <form id="option">
             <select id="mySelect" onchange="location = this.value;">
-                <option id="op">Select Option ...</option>
+                <option id="op">Select Project ...</option>
                 <c:forEach items="${P1}" var="P">
                     <option value="ViewProject?id=${P.id}">${P.name}</option>
                 </c:forEach>
@@ -404,13 +404,21 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="project-info">
+                <h1 id="resourcee"><em>Statistics</em></h1>
+                <div class="Resouce-info-wrapper">
+
+                </div>
             </div>
 
 
-
+        </div>
     </section>
 </section>
 <p id="S" style="display: none">${S}</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     if(document.getElementById("S").innerText === "S"){
         const projectView = document.querySelector('.projectView');
