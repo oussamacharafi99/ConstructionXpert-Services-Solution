@@ -206,7 +206,7 @@
                                         <label for="itemDescription">Description</label>
                                         <textarea class="form-control" id="itemDescription" name="DescriptionTask" placeholder="Entrer description"></textarea>
                                     </div>
-                                    <div class="col mt-5">
+                                    <div class="col "id="selectAdd">
                                         <select class="custom-select" id="inputGroupSelect01" name="statusTask">
                                             <option selected>Choose...</option>
                                             <option value="To Do">To Do</option>
@@ -233,10 +233,48 @@
                                     </div>
                                     <div class="controls-tache">
                                         <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
-                                        <a href="viewTask?idT=${T.getId()}&idP=${T.getProjectId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
-                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <a href="viewTask?idT=${T.getId()}&idP=${T.getProjectId()}"> <button><i class="fa-solid fa-toolbox"></i></button></a>
+                                        <a href="deleteProject?idT=${T.getId()}&idP=${T.getProjectId()}"><button><i class="fa-solid fa-trash"></i></button></a>
+                                        <a href="#" class="updateBtn"><button><i class="fa-solid fa-pen-clip"></i></i></button></a>
+                                    </div>
+                                    <div class="formUpdateTask">
+                                        <h1 class="closeUpdateTask"><i class="fa-solid fa-circle-xmark"></i></h1>
+                                        <form action="deleteProject" method="POST" class="mb-4">
+                                            <div class="row">
+                                                <div class="col" style="display:none;">
+                                                    <label for="DateDebutProject">Date de début</label>
+                                                    <input type="number" class="form-control" value="${T.getId()}"  name="idTask">
+                                                </div>
+                                                <div class="col" style="display:none;">
+                                                    <label for="DateDebutProject">Date de début</label>
+                                                    <input type="number" class="form-control" value="${T.getProjectId()}"  name="idProject">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="DateDebutProject">Date de début</label>
+                                                    <input type="date" class="form-control" id="DateDebutProject" name="DateDebutTask" value="${T.getStartDate()}">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="DateDebutProject">Date de début</label>
+                                                    <input type="date" class="form-control" id="DateDebutProject" name="DateFinTask" value="${T.getEndDate()}">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="itemDescription">Description</label>
+                                                    <textarea class="form-control" id="itemDescription" name="DescriptionTask" placeholder="Entrer description">${T.getDescription()}</textarea>
+                                                </div>
+                                                <div class="col">
+                                                    <select class="custom-select" id="inputGroupSelect01" name="statusTask">
+                                                        <option selected>Choose...</option>
+                                                        <option value="To Do">To Do</option>
+                                                        <option value="Completed">Completed</option>
+                                                        <option value="In Progress">In Progress</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-dark mt-3">update</button>
+                                        </form>
                                     </div>
                                 </div>
                             </c:forEach>
@@ -251,12 +289,53 @@
                                         <h2>${T.getEndDate()}</h2>
                                     </div>
                                     <div class="controls-tache">
-                                        <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
-                                        <a href="viewTask?idT=${T.getId()}&idP=${T.getProjectId()}"> <button><i class="fa-solid fa-pen-to-square"></i></button></a>
-                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                            <h6 class="setting"><i class="fa-solid fa-ellipsis-vertical"></i></h6>
+                                            <a href="viewTask?idT=${T.getId()}&idP=${T.getProjectId()}"> <button><i class="fa-solid fa-toolbox"></i></button></a>
+                                            <a href="deleteProject?idT=${T.getId()}&idP=${T.getProjectId()}"><button><i class="fa-solid fa-trash"></i></button></a>
+                                            <a href="#" class="updateBtn"><button><i class="fa-solid fa-pen-clip"></i></i></button></a>
                                     </div>
+                                    <div class="formUpdateTask">
+                                        <h1 class="closeUpdateTask"><i class="fa-solid fa-circle-xmark"></i></h1>
+                                        <form action="deleteProject" method="POST" class="mb-4">
+                                            <div class="row" style="display:none;">
+                                                <div class="col">
+                                                    <label for="idTask">Task ID</label>
+                                                    <input type="number" class="form-control" id="idTask" value="${T.getId()}" name="idTask">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="idProject">Project ID</label>
+                                                    <input type="number" class="form-control" id="idProject" value="${T.getProjectId()}" name="idProject">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="DateDebutTask">Date de début</label>
+                                                    <input type="date" class="form-control" id="DateDebutTask" name="DateDebutTask" value="${T.getStartDate()}">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="DateFinTask">Date de fin</label>
+                                                    <input type="date" class="form-control" id="DateFinTask" name="DateFinTask" value="${T.getEndDate()}">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="itemDescription">Description</label>
+                                                    <textarea class="form-control" id="itemDescription" name="DescriptionTask" placeholder="Entrer description">${T.getDescription()}</textarea>
+                                                </div>
+                                                <div class="col">
+                                                    <select  name="statusTask">
+                                                        <option value="" disabled selected>Choose...</option>
+                                                        <option value="To Do">To Do</option>
+                                                        <option value="Completed">Completed</option>
+                                                        <option value="In Progress">In Progress</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-dark">Update</button>
+                                        </form>
+                                    </div>
+
+
                                 </div>
                             </c:forEach>
                         </div>
@@ -265,16 +344,65 @@
                 </div>
 
             <div class="project-info">
-
                 <h1 id="resourcee"><em>Resource</em></h1>
-                <div class="project-info-wrapper">
-                    <c:forEach var="re" items="${ressource}">
-                    <div class="project-img">
-                        <p>${re.getName()}</p>
+                <div class="Resouce-info-wrapper">
+                    <div class="resourceMenu">
+                        <button class="btn btn-outline-primary Add" id="Add">Add Ressource</button>
                     </div>
-                    </c:forEach>
-                </div>
+                    <div class="addResource">
+                        <h1 class="closeAddRessource"><i class="fa-solid fa-circle-xmark"></i></h1>
+                        <form action="addRessource" method="POST">
+                            <div class="row">
+                                <div class="col" style="display: none">
+                                    <input type="number" value="${Project.getId()}" name="IdProject" id="IdProject" placeholder="idTask" class="form-control"/>
+                                </div>
+                                <div class="col" style="display: none">
+                                    <input type="number" value="${idTask}" name="idTask" id="idTask" placeholder="idTask" class="form-control"/>
+                                </div>
+                                <div class="col" style="display: none">
+                                    <input type="text"  name="resourceName" value="Resource For Task ${idTask}" id="resourceName" placeholder="resourceName" class="form-control"/>
+                                </div>
+                                <div class="col">
+                                    <select name="type" class="form-control">
+                                        <option value="" disabled selected>Choose...</option>
+                                        <option value="Material">Material</option>
+                                        <option value="Labor">Labor</option>
+                                        <option value="Equipment">Equipment</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="number" name="quantity" id="quantity" placeholder="Quantity" class="form-control"/>
+                                </div>
+                                <div class="col">
+                                    <select name="supplier" class="form-control">
+                                        <option value="" disabled selected>Choose...</option>
+                                        <option value="Supplier A">Supplier A</option>
+                                        <option value="Supplier B">Supplier B</option>
+                                        <option value="Supplier C">Supplier C</option>
+                                        <option value="Supplier D">Supplier D</option>
+                                        <option value="Supplier E">Supplier E</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-dark mt-3">Add Resource</button>
+                        </form>
+                    </div>
 
+                    <div class="ressource-wrapper">
+                        <c:forEach var="re" items="${ressource}">
+                        <div class="resource">
+                            <a href="addRessource?idT=${re.getTask_id()}&idP=${Project.getId()}&idR=${re.getId()}"><i class="fa-solid fa-circle-xmark"></i></a>
+                            <h1>${re.getName()}</h1>
+                            <div>
+                                <h2><span>Type </span> ---> <span> ${re.getType()}</span></h2>
+                                <h2><span>Quantity </span> ---> <span> ${re.getQuantity()}</span></h2>
+                                <h2><span>Supplier  </span> ---> <span> ${re.getSupplier()}</span></h2>
+                            </div>
+                        </div>
+
+                        </c:forEach>
+                    </div>
+                </div>
             </div>
             </div>
 
@@ -282,7 +410,38 @@
 
     </section>
 </section>
+<p id="S" style="display: none">${S}</p>
 <script>
+    if(document.getElementById("S").innerText === "S"){
+        const projectView = document.querySelector('.projectView');
+        const menu = document.querySelector('.borderM');
+        projectView.scrollTo({top: 1100, behavior: 'smooth'});
+        menu.style.transition = ".6s"
+        menu.style.top = "195px";
+        document.getElementById("S").innerText = "s";
+    }
+
+    function showUpdateTask(){
+        document.querySelectorAll(".tache").forEach(T =>{
+            const controls = T.querySelectorAll(".controls-tache");
+            const popup = T.querySelector(".formUpdateTask");
+            const popupAll = T.querySelectorAll(".formUpdateTask");
+            controls.forEach(C =>{
+                const updateTask = C.querySelector(".updateBtn");
+                updateTask.addEventListener("click", ()=>{
+                    popup.style.display = "block";
+                })
+            })
+            popupAll.forEach(P =>{
+                const close = P.querySelector(".closeUpdateTask");
+                close.addEventListener("click", ()=>{
+                    popup.style.display = "none";
+                })
+            })
+
+        })
+    }
+    showUpdateTask();
     function changing() {
         const btnP = document.getElementById("btn1");
         const btnF = document.getElementById("btn2");
@@ -378,7 +537,15 @@
             document.querySelector(".formAddTask").style.display = "none"
         })
     }
-
+    function addResources() {
+        document.querySelector(".Add").addEventListener("click", () => {
+            document.querySelector(".addResource").style.display = "block"
+        })
+        document.querySelector(".closeAddRessource").addEventListener("click", () => {
+            document.querySelector(".addResource").style.display = "none"
+        })
+    }
+    addResources();
     function alerting(){
         let checked = false;
         if (document.getElementById("alerT").innerHTML === "."){

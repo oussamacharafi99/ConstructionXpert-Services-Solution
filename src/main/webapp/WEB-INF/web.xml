@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
-        <url-pattern>/jjj</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -27,7 +27,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ViewAll</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/View</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -46,5 +46,21 @@
     <servlet-mapping>
         <servlet-name>UpdateProject</servlet-name>
         <url-pattern>/updateProject</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteTask</servlet-name>
+        <servlet-class>com.construction.servlets.DeleteTask</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteTask</servlet-name>
+        <url-pattern>/deleteProject</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddResource</servlet-name>
+        <servlet-class>com.construction.servlets.AddResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddResource</servlet-name>
+        <url-pattern>/addRessource</url-pattern>
     </servlet-mapping>
 </web-app>
