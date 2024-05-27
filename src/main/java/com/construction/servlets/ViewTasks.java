@@ -22,7 +22,6 @@ public class ViewTasks extends HttpServlet {
         ResourceDaoImp res=new ResourceDaoImp();
         TaskDaoImp tr=new TaskDaoImp();
         ProjectDaoImp project = new ProjectDaoImp();
-        TaskDaoImp taskId = new TaskDaoImp();
         try {
             request.setAttribute("idTask" , idT);
             request.setAttribute("P1" , project.viewProject());
@@ -31,8 +30,8 @@ public class ViewTasks extends HttpServlet {
             throw new RuntimeException(e);
         }
         try {
-            request.setAttribute("T" , taskId.viewTaskE(idP));
-            request.setAttribute("Tu" , taskId.viewTaskT(idP));
+            request.setAttribute("T" , tr.viewTaskE(idP));
+            request.setAttribute("Tu" , tr.viewTaskT(idP));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -44,10 +43,17 @@ public class ViewTasks extends HttpServlet {
                 request.setAttribute("S", "S");
             }
             else {
-                request.setAttribute("T" , taskId.viewTaskE(idP));
-                request.setAttribute("Tu" , taskId.viewTaskT(idP));
+                request.setAttribute("T" , tr.viewTaskE(idP));
+                request.setAttribute("Tu" , tr.viewTaskT(idP));
             }
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            request.setAttribute("Completed", tr.getCompletedTaskCount(idP));
+            request.setAttribute("ToDo", tr.getToDoTaskCount(idP));
+            request.setAttribute("Progress", tr.getInProgressTaskCount(idP));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -730,3 +730,10 @@ em{
 .resource > a:hover{
     transform: scale(1.1);
 }
+.statistic-info-wrapper{
+    width: 100%;
+    height: 90%;
+    border-radius: 12px;
+    padding: 10px 15px;
+    background: white;
+}

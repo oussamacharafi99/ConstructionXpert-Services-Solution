@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -145,7 +146,7 @@
                     <i class="fa-brands fa-osi"></i>
                     <p >Resources</p>
                 </h1>
-                <h1>
+                <h1 onclick="scrolling(1600 , 295)">
                     <i class="fa-solid fa-chart-simple"></i>
                     <p >Statistics</p>
                 </h1>
@@ -408,18 +409,46 @@
 
             <div class="project-info">
                 <h1 id="resourcee"><em>Statistics</em></h1>
-                <div class="Resouce-info-wrapper">
-
+                <div class="statistic-info-wrapper">
+                    <canvas id="myChart" style="width:100%;"></canvas>
                 </div>
             </div>
-
-
         </div>
     </section>
 </section>
+<div>
+    <p id="p1">${Completed}</p>
+    <p id="p2">${ToDo}</p>
+    <p id="p3">${Progress}</p>
+</div>
 <p id="S" style="display: none">${S}</p>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</script>
 <script>
+    const p1 = document.getElementById("p1");
+    const p2 = document.getElementById("p2");
+    const p3 = document.getElementById("p3");
+    const xValues = ["To Do","In Progress", "Completed",];
+    const yValues = [p1 , p2 , p3];
+    const barColors = ["green","orange","brown"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Tasks of Project"
+            }
+        }
+    });
+
     if(document.getElementById("S").innerText === "S"){
         const projectView = document.querySelector('.projectView');
         const menu = document.querySelector('.borderM');
@@ -511,12 +540,15 @@
         if (projectView.scrollTop === 0) {
             menu.style.transition = ".6s"
             menu.style.top = "0px";
-        } else if (projectView.scrollTop >= 500 && projectView.scrollTop < 700) {
+        } else if (projectView.scrollTop >= 500 && projectView.scrollTop < 800) {
             menu.style.transition = ".6s"
             menu.style.top = "95px";
-        } else if (projectView.scrollTop >= 700) {
+        } else if (projectView.scrollTop >= 800 &&projectView.scrollTop < 1200 ) {
             menu.style.transition = ".6s"
             menu.style.top = "195px";
+        } else if (projectView.scrollTop >= 1200) {
+            menu.style.transition = ".6s"
+            menu.style.top = "295px";
         }
     });
 
