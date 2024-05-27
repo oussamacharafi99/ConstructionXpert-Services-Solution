@@ -10,14 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/AddResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/DeleteTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +184,7 @@
       <workItem from="1716638542136" duration="6514000" />
       <workItem from="1716654466913" duration="13798000" />
       <workItem from="1716678756696" duration="14671000" />
-      <workItem from="1716741666653" duration="32124000" />
+      <workItem from="1716741666653" duration="33681000" />
     </task>
     <servers />
   </component>

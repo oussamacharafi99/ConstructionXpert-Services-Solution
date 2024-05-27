@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="login">
-        <button><i class="fa-solid fa-right-to-bracket"></i></button>
+        <button><i class="fa-solid fa-user"></i></button>
     </div>
 </header>
 <section class="main">
