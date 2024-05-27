@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="login">
-        <button><i class="fa-solid fa-right-to-bracket"></i></button>
+        <a href="${pageContext.request.contextPath}"><i class="fa-solid fa-right-to-bracket"></i></a>
     </div>
 </header>
 <section class="main">
@@ -74,8 +74,8 @@
         <form action="updateProject" method="POST" class="mb-4">
             <input type="hidden" name="itemId">
             <div class="form-group">
-                <label for="itemName">Nom du projet</label>
-                <input type="text" class="form-control" id="itemName" name="idProject" value="${Project.getId()}" placeholder="Entrer nom">
+                <label for="itemName">Id du projet</label>
+                <input  type="hidden" class="form-control" id="idProject" name="idProject" value="${Project.getId()}" placeholder="update id">
             </div>
             <div class="form-group">
                 <label for="itemName">Nom du projet</label>

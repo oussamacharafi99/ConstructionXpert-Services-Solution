@@ -28,10 +28,10 @@
         </div>
     </div>
     <div class="login">
-        <button><i class="fa-solid fa-user"></i></button>
+        <a href="View"><i class="fa-solid fa-user"></i></a>
     </div>
 </header>
-<section class="main">
+<section class="main" id="home">
     <div class="header2">
         <div class="header-wrapper">
             <div class="logo">
@@ -40,9 +40,9 @@
 
             <div class="list">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#Service">Services</a></li>
+                    <li><a href="#About">About</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -77,7 +77,7 @@
         </div>
     </div>
 </section>
-<section class="Service">
+<section class="Service" id="Service">
     <h1><em>Services</em></h1>
 
     <div class="service-wrapper">
@@ -118,7 +118,7 @@
 </section>
 <br>
 <br>
-<section class="About">
+<section class="About" id="About">
     <h1>ABOUT <em> COMPANY</em></h1>
     <div class="about-wrapper">
         <div class="SP">

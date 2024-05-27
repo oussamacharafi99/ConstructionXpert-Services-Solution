@@ -15,9 +15,13 @@ public class ViewProject extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProjectDaoImp project = new ProjectDaoImp();
+        ResourceDaoImp resourceDaoImp = new ResourceDaoImp();
+        TaskDaoImp taskDaoImp = new TaskDaoImp();
         Integer idP = Integer.valueOf(request.getParameter("id"));
 
         try {
+            int idT = taskDaoImp.viewTaskE(idP).get(0).getId();
+            request.setAttribute("ressource",resourceDaoImp.getResourceIdTask(idT));
             request.setAttribute("P1" , project.viewProject());
 
         } catch (SQLException e) {

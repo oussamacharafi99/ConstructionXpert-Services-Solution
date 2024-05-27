@@ -68,7 +68,7 @@ header{
     align-items: center;
     text-align: center;
 }
-.login > button{
+.login > a{
     padding: 6px 14px;
     font-size: 17px;
     font-weight: 700;
@@ -77,11 +77,11 @@ header{
     border-radius: 5px;
     background: #ffffff;
 }
-.login > button > i {
+.login > a > i {
     color: var(--color-primary);
     padding: 0 5px;
 }
-.login > button:hover{
+.login > a:hover{
     background: #e1e1e1;
 }
 .main{

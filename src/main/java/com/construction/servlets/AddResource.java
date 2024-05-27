@@ -53,11 +53,11 @@ public class AddResource extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ResourceDaoImp resourceDaoImp = new  ResourceDaoImp();
-        Integer idProject = Integer.parseInt(request.getParameter("IdProject"));
-        Integer idTache = Integer.parseInt(request.getParameter("idTask"));
+        int idProject = Integer.parseInt(request.getParameter("IdProject"));
+        int idTache = Integer.parseInt(request.getParameter("idTask"));
         String nameRessource = request.getParameter("resourceName");
         String type = request.getParameter("type");
-        Integer quantity = Integer.parseInt(request.getParameter("quantity"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
         String supplier = request.getParameter("supplier");
         try {
             resourceDaoImp.addResource(new Resource(idTache , nameRessource , type , quantity , supplier));
