@@ -21,6 +21,7 @@ public class Project {
     }
 
     private int id;
+    private Integer user_id;
     private String name;
     private String description;
     private String startDate;
@@ -34,6 +35,12 @@ public class Project {
 
     public void setId(int id) {
         this.id = id;
+    }
+    public Integer getUser_id(){
+        return user_id;
+    }
+    public void SetUserId(Integer user_id){
+        this.user_id = user_id;
     }
 
     public String getName() {

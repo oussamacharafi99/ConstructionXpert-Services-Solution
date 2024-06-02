@@ -416,19 +416,14 @@
         </div>
     </section>
 </section>
-<div>
-    <p id="p1">${Completed}</p>
-    <p id="p2">${ToDo}</p>
-    <p id="p3">${Progress}</p>
-</div>
+
 <p id="S" style="display: none">${S}</p>
-</script>
 <script>
-    const p1 = document.getElementById("p1");
-    const p2 = document.getElementById("p2");
-    const p3 = document.getElementById("p3");
+    let p1 = <%= request.getAttribute("ToDo") %>;
+    let p2 = <%= request.getAttribute("Progress") %>;
+    let p3 = <%= request.getAttribute("Completed") %>;
     const xValues = ["To Do","In Progress", "Completed",];
-    const yValues = [p1 , p2 , p3];
+    const yValues =[ p1, p2, p3];
     const barColors = ["green","orange","brown"];
 
     new Chart("myChart", {

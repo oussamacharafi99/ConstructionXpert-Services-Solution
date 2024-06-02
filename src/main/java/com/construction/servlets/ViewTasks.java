@@ -10,8 +10,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
-
 @WebServlet(name = "ViewTasks", value = "/ViewTasks")
 public class ViewTasks extends HttpServlet {
 
@@ -19,8 +17,8 @@ public class ViewTasks extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer idT=Integer.valueOf(request.getParameter("idT"));
         int idP= Integer.parseInt(request.getParameter("idP"));
-        ResourceDaoImp res=new ResourceDaoImp();
-        TaskDaoImp tr=new TaskDaoImp();
+        ResourceDaoImp resource=new ResourceDaoImp();
+        TaskDaoImp task =new TaskDaoImp();
         ProjectDaoImp project = new ProjectDaoImp();
         try {
             request.setAttribute("idTask" , idT);
@@ -30,30 +28,23 @@ public class ViewTasks extends HttpServlet {
             throw new RuntimeException(e);
         }
         try {
-            request.setAttribute("T" , tr.viewTaskE(idP));
-            request.setAttribute("Tu" , tr.viewTaskT(idP));
+            request.setAttribute("T" , task.viewTaskE(idP));
+            request.setAttribute("Tu" , task.viewTaskT(idP));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
         try {
-            request.setAttribute("Project",tr.findProjetById(idT));
-            if (!res.getResourceIdTask(idT).isEmpty()){
-                request.setAttribute("ressource",res.getResourceIdTask(idT));
+            request.setAttribute("Project", task.findProjetById(idT));
+            if (!resource.getResourceIdTask(idT).isEmpty()){
+                request.setAttribute("ressource", resource.getResourceIdTask(idT));
                 request.setAttribute("S", "S");
             }
             else {
-                request.setAttribute("T" , tr.viewTaskE(idP));
-                request.setAttribute("Tu" , tr.viewTaskT(idP));
+                request.setAttribute("T" , task.viewTaskE(idP));
+                request.setAttribute("Tu" , task.viewTaskT(idP));
             }
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            request.setAttribute("Completed", tr.getCompletedTaskCount(idP));
-            request.setAttribute("ToDo", tr.getToDoTaskCount(idP));
-            request.setAttribute("Progress", tr.getInProgressTaskCount(idP));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

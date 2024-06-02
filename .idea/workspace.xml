@@ -10,10 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/UserDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +30,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
         <option value="Servlet" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -188,7 +196,7 @@
       <workItem from="1716678756696" duration="14671000" />
       <workItem from="1716741666653" duration="36459000" />
       <workItem from="1716786965678" duration="703000" />
-      <workItem from="1716788153042" duration="2611000" />
+      <workItem from="1716788153042" duration="13439000" />
     </task>
     <servers />
   </component>
@@ -197,5 +205,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp</url>
+          <line>417</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
