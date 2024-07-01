@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="login">
-        <a href="View"><i class="fa-solid fa-user"></i></a>
+        <a href="view"><i class="fa-solid fa-user"></i></a>
     </div>
 </header>
 <section class="main" id="home">

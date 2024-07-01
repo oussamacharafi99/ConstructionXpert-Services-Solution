@@ -7,14 +7,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface TaskDoa {
-    public void addTask(Task task) throws SQLException;
-    public List<Task> viewTaskE(int projectId) throws SQLException;
-    public List<Task> viewTaskT(int projectId) throws SQLException;
+     void addTask(Task task) throws SQLException;
+     List<Task> viewTaskE(int projectId) throws SQLException;
+    List<Task> viewTaskT(int projectId) throws SQLException;
 
-    public void updateTask(Integer id, Task task) throws SQLException;
-    public void removeTask(Integer id) throws SQLException;
-    public Project findProjetById(Integer id)throws SQLException;
-    public int getCompletedTaskCount(int projectId) throws SQLException;
-    public int getToDoTaskCount(int projectId) throws SQLException;
-    public int getInProgressTaskCount(int projectId) throws SQLException;
+     void updateTask(Integer id, Task task) throws SQLException;
+     void removeTask(Integer id) throws SQLException;
+     Project findProjetById(Integer id)throws SQLException;
+     int getTaskCount(int projectId, String status) throws SQLException;
 }

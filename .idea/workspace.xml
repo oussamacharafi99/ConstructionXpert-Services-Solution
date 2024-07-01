@@ -10,15 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="276c7dc4-2f94-47c3-b11d-db8feae8966f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/UserDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/classes/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/Dao/TaskDoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/construction/servlets/ViewTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
@@ -72,7 +69,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 8.5.100.executor&quot;: &quot;Debug&quot;,
     &quot;Tomcat Server.Tomcat 8.5.99.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v2&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -196,7 +193,9 @@
       <workItem from="1716678756696" duration="14671000" />
       <workItem from="1716741666653" duration="36459000" />
       <workItem from="1716786965678" duration="703000" />
-      <workItem from="1716788153042" duration="13439000" />
+      <workItem from="1716788153042" duration="14090000" />
+      <workItem from="1719170848975" duration="264000" />
+      <workItem from="1719792004014" duration="1864000" />
     </task>
     <servers />
   </component>
@@ -205,16 +204,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/viewProject.jsp</url>
-          <line>417</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -417,17 +417,15 @@
     </section>
 </section>
 
+
 <p id="S" style="display: none">${S}</p>
 <script>
-    let p1 = <%= request.getAttribute("ToDo") %>;
-    let p2 = <%= request.getAttribute("Progress") %>;
-    let p3 = <%= request.getAttribute("Completed") %>;
     const xValues = ["To Do","In Progress", "Completed",];
-    const yValues =[ p1, p2, p3];
+    const yValues =[${ToDo},${Progress},${Completed} ];
     const barColors = ["green","orange","brown"];
 
     new Chart("myChart", {
-        type: "bar",
+        type: "line",
         data: {
             labels: xValues,
             datasets: [{
